@@ -1,6 +1,8 @@
 ---
 title: "Handmade Gnocchi with Brown Butter & Sage"
-description: "Roll, cut and shape pillowy potato gnocchi together, then toss them in nutty brown butter with crispy sage. A hands-on project that's half the fun of the date."
+description: "Roll, cut and shape pillowy potato gnocchi together, then sear them golden in nutty brown butter with crispy sage. A hands-on project that's half the fun of the date."
+image: ./images/brown-butter-gnocchi.jpg
+imageAlt: "Golden pan-seared gnocchi in brown butter with crispy sage leaves and grated Parmesan"
 emoji: "🥔"
 color: "#a16207"
 vibe: Cozy
@@ -28,8 +30,9 @@ steps:
   - { who: both, text: "Add the yolk, salt and most of the flour. Mix gently with your hands into a soft dough. Use as little flour as you can, because less flour makes softer gnocchi." }
   - { who: both, text: "Divide the dough in half: one portion each. Roll it into ¾-inch ropes and cut them into 1-inch pillows. Bonus points for rolling them over a fork to make ridges. Race each other if you like." }
   - { who: chef1, text: "Bring a big pot of salted water to a boil. Drop in the gnocchi and scoop them out about 30 seconds after they float." }
-  - { who: chef2, text: "Meanwhile, melt the butter in a wide skillet over medium heat until it foams and smells nutty and turns golden-brown. Add the sage and fry for 30 seconds until crisp." }
-  - { who: both, text: "Toss the gnocchi in the brown butter, add a squeeze of lemon, and shower with Parmesan and pepper. Eat straight from the pan if you like." }
+  - { who: chef2, text: "Meanwhile, melt the butter in a wide skillet over medium heat until it foams and smells nutty and turns golden-brown. Add the sage and fry for 30 seconds until crisp, then lift the leaves out onto a plate." }
+  - { who: chef2, text: "Add the boiled gnocchi to the brown butter in a single layer and leave them alone for 2–3 minutes, until golden and crisp underneath. Flip them and cook for 1–2 minutes more." }
+  - { who: both, text: "Add a squeeze of lemon, then top with the crispy sage, a shower of Parmesan and plenty of black pepper. Eat straight from the pan if you like." }
 pairing:
   drink: "A crisp Pinot Grigio or a light Chianti"
   playlist: "Italian café: Paolo Conte, Mina"
