@@ -1,0 +1,249 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({ params: { slug: recipe.id }, props: { recipe, all: recipes } }));
+}
+const { recipe, all } = Astro.props;
+const d = recipe.data;
+const { Content } = await render(recipe);
+const total = d.prepMinutes + d.cookMinutes;
+const roleLabel = { both: 'Together', chef1: 'Chef 1', chef2: 'Chef 2' };
+const ingText = (i) => [i.qty, i.unit, i.item].filter(Boolean).join(' ');
+const related = all.filter((r) => r.id !== recipe.id)
+  .sort((a, b) => (b.data.vibe === d.vibe ? 1 : 0) - (a.data.vibe === d.vibe ? 1 : 0)).slice(0, 3);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: d.title,
+  description: d.description,
+  author: { '@type': 'Organization', name: 'Table for Two' },
+  datePublished: d.published.toISOString().slice(0, 10),
+  prepTime: `PT${d.prepMinutes}M`,
+  cookTime: `PT${d.cookMinutes}M`,
+  totalTime: `PT${total}M`,
+  recipeYield: `${d.servings} servings`,
+  recipeCategory: d.course,
+  recipeCuisine: d.cuisine,
+  keywords: `date night, dinner for two, ${d.vibe.toLowerCase()} date night, ${d.cuisine.toLowerCase()}`,
+  recipeIngredient: d.ingredients.map(ingText),
+  recipeInstructions: d.steps.map((s) => ({ '@type': 'HowToStep', text: s.text })),
+  // TODO: add `image` (array of photo URLs, ideally 1:1, 4:3 and 16:9) once you have real photos. Google needs it for rich results.
+};
+---
+<Base title={d.title} description={d.description} jsonLd={jsonLd}>
+  <article style={`--c:${d.color}`}>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <a href="/recipes/" class="back no-print">← All recipes</a>
+          <div class="chips"><span class="chip">{d.vibe} night</span><span class="chip">{d.cuisine}</span>{d.diet.map((t) => <span class="chip">{t}</span>)}</div>
+          <h1>{d.title}</h1>
+          <p class="lede">{d.description}</p>
+          <div class="stats">
+            <div><b>{d.prepMinutes}m</b><span>Prep</span></div>
+            <div><b>{d.cookMinutes}m</b><span>Cook</span></div>
+            <div><b>{d.difficulty}</b><span>Level</span></div>
+            <div><b>{d.servings}</b><span>Serves</span></div>
+          </div>
+          <div class="actions no-print">
+            <a href="#recipe" class="btn">Jump to recipe ↓</a>
+            <button class="btn ghost" onclick="window.print()">Print</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><span>{d.emoji}</span></div>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <div class="main">
+        <div class="story no-print"><Content /></div>
+
+        <div class="vibe-box no-print">
+          <h2>Set the mood</h2>
+          <div class="vibe-grid">
+            <div><span>🍷</span><b>Drink</b><p>{d.pairing.drink}</p></div>
+            <div><span>🎶</span><b>Playlist</b><p>{d.pairing.playlist}</p></div>
+            <div><span>🕯️</span><b>Vibe</b><p>{d.pairing.mood}</p></div>
+          </div>
+        </div>
+
+        <AdSlot size="banner" />
+
+        <section id="recipe" class="recipe-card" data-base={d.servings}>
+          <header class="rc-head">
+            <h2>{d.title}</h2>
+            <div class="scaler no-print" role="group" aria-label="Servings">
+              <button type="button" data-step="-2" aria-label="Fewer servings">−</button>
+              <span><b class="srv">{d.servings}</b> servings</span>
+              <button type="button" data-step="2" aria-label="More servings">+</button>
+            </div>
+          </header>
+
+          <div class="rc-grid">
+            <div>
+              <h3>Ingredients</h3>
+              <ul class="ings">
+                {d.ingredients.map((i, idx) => (
+                  <li>
+                    <label>
+                      <input type="checkbox" class="no-print" />
+                      <span>{i.qty !== undefined && <b class="qty" data-qty={i.qty}>{i.qty}</b>} {i.unit} {i.item}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div class="steps-head">
+                <h3>Steps</h3>
+                <div class="roles no-print" role="tablist" aria-label="Show steps for">
+                  <button type="button" data-role="all" class="on">Everyone</button>
+                  <button type="button" data-role="chef1">Chef 1</button>
+                  <button type="button" data-role="chef2">Chef 2</button>
+                </div>
+              </div>
+              <p class="hint no-print">Decide who's Chef 1 and who's Chef 2, then pick your role to see just your steps. Steps marked <b>Together</b> are for both of you.</p>
+              <ol class="steps">
+                {d.steps.map((s) => (
+                  <li data-who={s.who}>
+                    <span class:list={['who', s.who]}>{roleLabel[s.who]}</span>
+                    <p>{s.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {d.gear.length > 0 && (
+          <section class="gear no-print">
+            <h3>🧰 What we use for this one</h3>
+            <ul>{d.gear.map((g) => <li><a href={g.url} rel="sponsored nofollow noopener" target="_blank">{g.name} →</a></li>)}</ul>
+            <small>Affiliate links: we may earn a small commission, at no extra cost to you.</small>
+          </section>
+        )}
+      </div>
+
+      <aside class="side no-print">
+        <div class="sticky">
+          <AdSlot />
+          <div class="side-cta">
+            <p class="eyebrow">Make it a whole evening</p>
+            <p>Pair this with a dessert, a drink and conversation starters.</p>
+            <a class="btn" href="/date-night-planner/">Plan our night</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="wrap no-print">
+      <Newsletter />
+      <h2>More for your next date night</h2>
+      <div class="grid">{related.map((r) => <RecipeCard recipe={r} />)}</div>
+    </div>
+  </article>
+</Base>
+
+<script>
+  const card = document.querySelector('.recipe-card');
+  const base = Number(card.dataset.base);
+  let servings = base;
+  const fracs = [[0, ''], [0.125, '⅛'], [0.25, '¼'], [0.333, '⅓'], [0.5, '½'], [0.667, '⅔'], [0.75, '¾'], [1, '']];
+  const fmt = (n) => {
+    let whole = Math.floor(n), rest = n - whole;
+    let best = fracs.reduce((a, b) => (Math.abs(b[0] - rest) < Math.abs(a[0] - rest) ? b : a));
+    if (best[0] === 1) { whole += 1; best = fracs[0]; }
+    return (whole ? String(whole) : '') + best[1] || '0';
+  };
+  const render = () => {
+    card.querySelector('.srv').textContent = servings;
+    card.querySelectorAll('.qty').forEach((el) => { el.textContent = fmt(Number(el.dataset.qty) * servings / base); });
+  };
+  card.querySelectorAll('[data-step]').forEach((b) => b.addEventListener('click', () => {
+    servings = Math.min(12, Math.max(1, servings + Number(b.dataset.step)));
+    render();
+  }));
+  render();
+
+  card.querySelectorAll('[data-role]').forEach((b) => b.addEventListener('click', () => {
+    card.querySelectorAll('[data-role]').forEach((x) => x.classList.toggle('on', x === b));
+    const role = b.dataset.role;
+    card.querySelectorAll('.steps li').forEach((li) => {
+      li.classList.toggle('dim', role !== 'all' && li.dataset.who !== role && li.dataset.who !== 'both');
+    });
+  }));
+  card.querySelectorAll('.ings input').forEach((cb) => cb.addEventListener('change', () => cb.closest('li').classList.toggle('done', cb.checked)));
+</script>
+
+<style>
+  .hero { background: linear-gradient(180deg, color-mix(in srgb, var(--c) 14%, var(--cream)), var(--cream)); padding: 36px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 360px; } }
+  .back { display: inline-block; margin-bottom: 18px; text-decoration: none; font-weight: 700; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .stats div { background: var(--paper); border-radius: 16px; padding: 10px 18px; display: flex; flex-direction: column; box-shadow: 0 1px 0 var(--line); }
+  .stats b { font-family: var(--display); font-size: 1.3rem; }
+  .stats span { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-art { aspect-ratio: 1; border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%; display: grid; place-items: center; width: 100%;
+    background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--c) 30%, #fff), var(--c)); box-shadow: var(--shadow); animation: blob 10s ease-in-out infinite; }
+  .hero-art span { font-size: clamp(6rem, 16vw, 10rem); filter: drop-shadow(0 16px 20px rgba(0,0,0,.3)); }
+  @keyframes blob { 50% { border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%; } }
+  @media (prefers-reduced-motion: reduce) { .hero-art { animation: none; } }
+
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; margin-top: 40px; }
+  @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } .side { display: none; } }
+  .story { font-size: 1.1rem; max-width: 68ch; }
+  .sticky { position: sticky; top: 90px; }
+  .side-cta { background: var(--paper); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+
+  .vibe-box { margin: 36px 0; }
+  .vibe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 640px) { .vibe-grid { grid-template-columns: 1fr; } }
+  .vibe-grid div { background: var(--paper); border-radius: 18px; padding: 18px; box-shadow: 0 1px 0 var(--line); }
+  .vibe-grid span { font-size: 1.8rem; display: block; }
+  .vibe-grid p { margin: .2em 0 0; color: var(--muted); font-size: .95rem; }
+
+  .recipe-card { background: var(--paper); border-radius: 28px; padding: clamp(20px, 4vw, 40px); box-shadow: var(--shadow); border-top: 8px solid var(--c); scroll-margin-top: 90px; }
+  .rc-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  .rc-head h2 { margin: 0; font-size: 1.7rem; }
+  .scaler { display: flex; align-items: center; gap: 10px; background: var(--blush); border-radius: 999px; padding: 4px; }
+  .scaler button { width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--wine); color: #fff; font-size: 1.2rem; cursor: pointer; }
+  .scaler span { font-weight: 700; color: var(--wine-dark); padding: 0 6px; }
+  .rc-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; }
+  @media (max-width: 760px) { .rc-grid { grid-template-columns: 1fr; } }
+  .ings { list-style: none; padding: 0; margin: 0; }
+  .ings li { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .ings label { display: flex; gap: 12px; cursor: pointer; align-items: flex-start; }
+  .ings input { accent-color: var(--wine); width: 18px; height: 18px; margin-top: 4px; flex: none; }
+  .ings li.done span { text-decoration: line-through; opacity: .45; }
+  .steps-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .steps-head h3 { margin: 0; }
+  .roles { display: flex; background: var(--cream); border-radius: 999px; padding: 4px; }
+  .roles button { border: 0; background: none; font: 700 .85rem var(--body); padding: .5em 1em; border-radius: 999px; cursor: pointer; color: var(--muted); }
+  .roles button.on { background: var(--ink); color: #fff; }
+  .hint { font-size: .88rem; color: var(--muted); margin: 10px 0 0; }
+  .steps { list-style: none; counter-reset: s; padding: 0; margin: 16px 0 0; }
+  .steps li { counter-increment: s; position: relative; padding: 16px 0 16px 56px; border-bottom: 1px dashed var(--line); transition: opacity .25s; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 16px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--cream); font-family: var(--display); font-weight: 700; color: var(--wine); }
+  .steps li.dim { opacity: .28; }
+  .steps p { margin: 4px 0 0; }
+  .who { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: .2em .7em; border-radius: 999px; }
+  .who.both { background: var(--blush); color: var(--wine-dark); }
+  .who.chef1 { background: #dbeafe; color: #1e40af; }
+  .who.chef2 { background: #fef3c7; color: #92400e; }
+
+  .gear { margin-top: 32px; background: var(--paper); border-radius: var(--radius); padding: 24px 28px; border: 2px solid var(--line); }
+  .gear ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .gear a { display: inline-block; background: var(--cream); padding: .5em 1em; border-radius: 999px; text-decoration: none; font-weight: 700; }
+  .gear small { color: var(--muted); }
+</style>

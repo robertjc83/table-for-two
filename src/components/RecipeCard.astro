@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { recipe: CollectionEntry<'recipes'>; }
+const { recipe } = Astro.props;
+const d = recipe.data;
+const total = d.prepMinutes + d.cookMinutes;
+---
+<a href={`/recipes/${recipe.id}/`} class="card"
+   data-vibe={d.vibe} data-course={d.course} data-time={total} data-diet={d.diet.join(',')} data-title={d.title.toLowerCase()}
+   style={`--c:${d.color}`}>
+  <div class="art"><span>{d.emoji}</span><em class="vibe">{d.vibe}</em></div>
+  <div class="body">
+    <h3>{d.title}</h3>
+    <p>{d.description}</p>
+    <div class="meta">
+      <span>⏱ {total} min</span><span>•</span><span>{d.difficulty}</span><span>•</span><span>{d.course}</span>
+    </div>
+  </div>
+</a>
+<style>
+  .card { display: flex; flex-direction: column; background: var(--paper); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 1px 0 var(--line), var(--shadow); transition: transform .2s, box-shadow .2s; }
+  .card:hover { transform: translateY(-6px) rotate(-.4deg); box-shadow: 0 24px 40px -18px rgba(109, 11, 39, .4); }
+  .art { position: relative; aspect-ratio: 16/10; display: grid; place-items: center;
+    background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--c) 35%, #fff) 0, transparent 55%),
+                linear-gradient(135deg, color-mix(in srgb, var(--c) 80%, #fff), var(--c)); }
+  .art span { font-size: 5rem; filter: drop-shadow(0 10px 14px rgba(0,0,0,.25)); transition: transform .3s; }
+  .card:hover .art span { transform: scale(1.12) rotate(-6deg); }
+  .vibe { position: absolute; top: 14px; left: 14px; font-style: normal; background: rgba(255,255,255,.92); color: var(--ink); font-size: .75rem; font-weight: 700; padding: .3em .8em; border-radius: 999px; }
+  .body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  h3 { font-size: 1.3rem; margin-bottom: .35em; }
+  p { color: var(--muted); font-size: .95rem; margin: 0 0 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .meta { margin-top: auto; display: flex; gap: 8px; font-size: .85rem; font-weight: 700; color: var(--wine-dark); flex-wrap: wrap; }
+</style>

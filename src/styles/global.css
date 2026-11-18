@@ -1,0 +1,52 @@
+:root {
+  --cream: #fff6ee;
+  --paper: #ffffff;
+  --ink: #2b1621;
+  --muted: #7a5f6a;
+  --wine: #9f1239;
+  --wine-dark: #6d0b27;
+  --coral: #ff6f61;
+  --blush: #ffe1dc;
+  --gold: #f6b93b;
+  --line: #f1dcd3;
+  --radius: 22px;
+  --shadow: 0 10px 30px -12px rgba(109, 11, 39, .25);
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.3rem, 6vw, 4.2rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); }
+a { color: var(--wine); }
+img { max-width: 100%; }
+.wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 700; color: var(--coral); }
+.btn {
+  display: inline-flex; align-items: center; gap: .5em; border: 0; cursor: pointer;
+  background: var(--wine); color: #fff; font: 700 1rem var(--body);
+  padding: .85em 1.5em; border-radius: 999px; text-decoration: none;
+  transition: transform .15s, background .15s, box-shadow .15s; box-shadow: var(--shadow);
+}
+.btn:hover { background: var(--wine-dark); transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--wine); box-shadow: inset 0 0 0 2px var(--wine); }
+.btn.ghost:hover { background: var(--wine); color: #fff; }
+.chip {
+  display: inline-block; padding: .25em .8em; border-radius: 999px; font-size: .8rem; font-weight: 700;
+  background: var(--blush); color: var(--wine-dark);
+}
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+.grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media print {
+  header, footer, .no-print, .ad-slot { display: none !important; }
+  body { background: #fff; font-size: 12pt; }
+}
+
+[hidden] { display: none !important; }

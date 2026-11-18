@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Newsletter from '../components/Newsletter.astro';
+---
+<Base title="About" description="Table for Two is a recipe site for couples who'd rather cook date night dinners at home together.">
+  <section class="wrap prose">
+    <p class="eyebrow">About us</p>
+    <h1>Date night, made at home.</h1>
+    <p>Table for Two started with a simple idea: the best date nights don't need a reservation. They happen when you're both in the kitchen, music on, swapping tasks and stealing tastes.</p>
+    <p>Every recipe here is written for two people cooking <em>together</em>. Each step is assigned to <b>Chef 1</b>, <b>Chef 2</b> or both of you, so nobody is stuck watching from the counter. Each recipe also suggests a drink, a playlist and a way to set the mood.</p>
+    <p><!-- TODO: add your personal story here. Readers (and Google) trust real people. Include a photo of you two! --> We're a couple who cook together most nights and test every recipe in a regular home kitchen.</p>
+    <Newsletter />
+  </section>
+</Base>
+<style>
+  .prose { max-width: 760px; padding-top: 56px; font-size: 1.12rem; }
+</style>

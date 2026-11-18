@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; jsonLd?: object; }
+const { title, description, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === 'Table for Two' ? 'Table for Two | Date Night Recipes for Couples' : `${title} | Table for Two`;
+const nav = [
+  { href: '/recipes/', label: 'Recipes' },
+  { href: '/date-night-planner/', label: 'Date Night Planner' },
+  { href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta name="theme-color" content="#9f1239" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet" />
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a href="/" class="logo" aria-label="Table for Two home"><span class="logo-mark">♥</span> Table for Two</a>
+      <nav aria-label="Main">
+        {nav.map((n) => <a href={n.href} class:list={{ active: Astro.url.pathname.startsWith(n.href) }}>{n.label}</a>)}
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <a href="/" class="logo light"><span class="logo-mark">♥</span> Table for Two</a>
+        <p>Date night recipes for couples who'd rather cook together than go out.</p>
+      </div>
+      <div class="links">
+        <a href="/recipes/">All recipes</a>
+        <a href="/date-night-planner/">Planner</a>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy & disclosures</a>
+      </div>
+    </div>
+    <p class="wrap fine">© {new Date().getFullYear()} Table for Two. Some links are affiliate links; we may earn a small commission at no cost to you.</p>
+  </footer>
+</body>
+</html>
+<style>
+  .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 246, 238, .85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: .4em; white-space: nowrap; }
+  .logo-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--wine); color: #fff; font-size: .95rem; }
+  nav { display: flex; gap: 4px; overflow-x: auto; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 500; padding: .45em .9em; border-radius: 999px; white-space: nowrap; font-size: .95rem; }
+  nav a:hover, nav a.active { background: var(--blush); color: var(--wine-dark); }
+  @media (max-width: 640px) {
+    .bar { flex-direction: column; height: auto; padding: 10px 0; gap: 6px; }
+    nav a { font-size: .88rem; padding: .35em .7em; }
+  }
+  .site-footer { background: var(--ink); color: #f3dde4; margin-top: 40px; padding: 56px 0 24px; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  .foot p { max-width: 380px; color: #cfb3bd; }
+  .logo.light { color: #fff; }
+  .links { display: flex; flex-direction: column; gap: 6px; }
+  .links a { color: #f3dde4; text-decoration: none; }
+  .links a:hover { color: var(--gold); }
+  .fine { font-size: .8rem; color: #a88c97; margin-top: 32px; padding-top: 18px; border-top: 1px solid #4a2a37; }
+</style>

@@ -1,0 +1,129 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import AdSlot from '../components/AdSlot.astro';
+import Newsletter from '../components/Newsletter.astro';
+const recipes = await getCollection('recipes');
+const data = recipes.map((r) => ({
+  id: r.id, title: r.data.title, emoji: r.data.emoji, vibe: r.data.vibe, course: r.data.course,
+  time: r.data.prepMinutes + r.data.cookMinutes, pairing: r.data.pairing,
+}));
+const questions = [
+  "What's a meal from your childhood you'd love to recreate together?",
+  'If we could teleport anywhere for dinner tonight, where would we go?',
+  "What's something you've always wanted to learn to cook?",
+  'What was your first impression of me, honestly?',
+  "What's a small thing I do that makes your day better?",
+  "Where do you see us on a perfect Sunday five years from now?",
+  "What's the best meal you've ever eaten, and who were you with?",
+  'If we opened a restaurant together, what would it be called?',
+  "What's one tradition you'd like us to start?",
+  "What song instantly reminds you of us?",
+];
+---
+<Base title="Date Night Planner" description="Plan a complete date night at home in seconds: a dinner for two, a dessert, a drink pairing, a playlist and conversation starters, matched to your mood.">
+  <section class="wrap head">
+    <p class="eyebrow">Date night planner</p>
+    <h1>Plan the whole night <em>in 10 seconds</em>.</h1>
+    <p class="lede">Tell us your mood and how much time you have. We'll plan the dinner, dessert, drinks, music and something to talk about.</p>
+  </section>
+
+  <section class="wrap">
+    <form class="picker" id="picker">
+      <fieldset>
+        <legend>Tonight feels…</legend>
+        <div class="opts">
+          {['Cozy', 'Fancy', 'Playful', 'Adventurous'].map((v, i) => (
+            <label><input type="radio" name="vibe" value={v} checked={i === 0} /><span>{v}</span></label>
+          ))}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Time for dinner</legend>
+        <div class="opts">
+          {[['30', 'Quick (≤30m)'], ['60', 'An hour'], ['999', 'All evening']].map(([v, l], i) => (
+            <label><input type="radio" name="time" value={v} checked={i === 2} /><span>{l}</span></label>
+          ))}
+        </div>
+      </fieldset>
+      <button class="btn" type="submit">Plan our night ♥</button>
+    </form>
+
+    <div class="plan" id="plan" hidden aria-live="polite">
+      <div class="ticket">
+        <p class="eyebrow">Tonight's menu</p>
+        <div class="course-row"><span id="m-emoji"></span><div><small>Main</small><a id="m-link"></a></div></div>
+        <div class="course-row"><span id="d-emoji"></span><div><small>Dessert</small><a id="d-link"></a></div></div>
+        <hr />
+        <div class="extras">
+          <div><small>🍷 Drink</small><p id="p-drink"></p></div>
+          <div><small>🎶 Playlist</small><p id="p-play"></p></div>
+          <div><small>🕯️ Setting</small><p id="p-mood"></p></div>
+        </div>
+        <hr />
+        <small>💬 Talk about this</small>
+        <ul id="p-q"></ul>
+        <div class="plan-actions no-print">
+          <button class="btn ghost" type="button" id="reshuffle">Shuffle</button>
+          <button class="btn ghost" type="button" onclick="window.print()">Print our menu</button>
+        </div>
+      </div>
+    </div>
+    <AdSlot size="banner" />
+    <Newsletter />
+  </section>
+</Base>
+
+<script define:vars={{ data, questions }}>
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  const form = document.getElementById('picker');
+  const $ = (id) => document.getElementById(id);
+  function plan() {
+    const fd = new FormData(form);
+    const vibe = fd.get('vibe'), max = Number(fd.get('time'));
+    const mains = data.filter((r) => ['Main', 'Full Menu'].includes(r.course));
+    const fit = mains.filter((r) => r.time <= max);
+    const pool = fit.filter((r) => r.vibe === vibe);
+    const main = pick(pool.length ? pool : fit.length ? fit : mains);
+    const desserts = data.filter((r) => r.course === 'Dessert');
+    const dessert = desserts.length ? pick(desserts) : null;
+    $('m-emoji').textContent = main.emoji; $('m-link').textContent = main.title; $('m-link').href = `/recipes/${main.id}/`;
+    if (dessert) { $('d-emoji').textContent = dessert.emoji; $('d-link').textContent = dessert.title; $('d-link').href = `/recipes/${dessert.id}/`; }
+    $('p-drink').textContent = main.pairing.drink; $('p-play').textContent = main.pairing.playlist; $('p-mood').textContent = main.pairing.mood;
+    $('p-q').innerHTML = '';
+    shuffle(questions).slice(0, 3).forEach((q) => { const li = document.createElement('li'); li.textContent = q; $('p-q').appendChild(li); });
+    $('plan').hidden = false;
+    $('plan').animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 400, easing: 'ease-out' });
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); plan(); $('plan').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  $('reshuffle').addEventListener('click', plan);
+</script>
+
+<style>
+  .head { padding: 48px 0 16px; max-width: 760px; }
+  h1 em { color: var(--wine); font-weight: 500; }
+  .lede { color: var(--muted); font-size: 1.15rem; }
+  .picker { background: var(--paper); border-radius: 28px; padding: clamp(20px, 4vw, 36px); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  legend { font-family: var(--display); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+  .opts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .opts input { position: absolute; opacity: 0; }
+  .opts span { display: inline-block; padding: .6em 1.2em; border-radius: 999px; border: 2px solid var(--line); font-weight: 700; cursor: pointer; transition: .15s; }
+  .opts input:checked + span { background: var(--wine); border-color: var(--wine); color: #fff; }
+  .opts input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .plan { margin-top: 32px; scroll-margin-top: 90px; }
+  .ticket { max-width: 640px; margin: 0 auto; background: #fffdf9; border-radius: 6px; padding: 36px clamp(20px, 5vw, 44px); box-shadow: var(--shadow); border: 1px solid var(--line); text-align: center;
+    background-image: radial-gradient(circle at 0 50%, var(--cream) 14px, transparent 15px), radial-gradient(circle at 100% 50%, var(--cream) 14px, transparent 15px); }
+  .course-row { display: flex; gap: 16px; align-items: center; justify-content: center; margin: 14px 0; text-align: left; }
+  .course-row > span { font-size: 2.6rem; }
+  .course-row a { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--ink); text-decoration-color: var(--coral); }
+  small { display: block; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; color: var(--coral); }
+  hr { border: 0; border-top: 2px dashed var(--line); margin: 24px 0; }
+  .extras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 600px) { .extras { grid-template-columns: 1fr; } }
+  .extras p { margin: 4px 0 0; font-size: .95rem; }
+  #p-q { list-style: none; padding: 0; margin: 10px 0 0; font-family: var(--display); font-style: italic; font-size: 1.1rem; }
+  #p-q li { margin: 8px 0; }
+  .plan-actions { display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+</style>

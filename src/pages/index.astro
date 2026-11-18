@@ -1,0 +1,151 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import RecipeCard from '../components/RecipeCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+import AdSlot from '../components/AdSlot.astro';
+
+const recipes = (await getCollection('recipes')).sort((a, b) => +b.data.published - +a.data.published);
+const spinData = recipes.map((r) => ({ id: r.id, title: r.data.title, emoji: r.data.emoji, vibe: r.data.vibe }));
+const vibes = [
+  { name: 'Cozy', emoji: '🕯️', blurb: 'Sweaters, slow stirring, rainy nights in.' },
+  { name: 'Fancy', emoji: '🥂', blurb: 'A restaurant dinner without the bill.' },
+  { name: 'Playful', emoji: '🎲', blurb: 'Quick, fun, and no stress.' },
+  { name: 'Adventurous', emoji: '🌶️', blurb: 'New flavors and a bit of heat.' },
+];
+---
+<Base title="Table for Two" description="Date night recipes for couples: dinners for two you cook together, with drink pairings, playlists and a split-the-work plan in every recipe.">
+  <section class="hero">
+    <div class="floaters" aria-hidden="true"><span>🍷</span><span>🍝</span><span>🕯️</span><span>🍓</span><span>🥂</span><span>🍫</span></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Date night recipes for two</p>
+      <h1>Skip the reservation.<br /><em>Cook something together.</em></h1>
+      <p class="lede">Easy, impressive dinners for couples. Every recipe splits the work between <b>Chef 1</b> and <b>Chef 2</b> and comes with a drink pairing and a playlist.</p>
+      <div class="cta">
+        <a class="btn" href="/recipes/">Browse recipes</a>
+        <a class="btn ghost" href="/date-night-planner/">Plan our date night</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap spin-wrap">
+    <div class="spin">
+      <div class="reel" aria-live="polite"><span id="reel-emoji">🎰</span></div>
+      <div class="spin-text">
+        <p class="eyebrow">Can't decide?</p>
+        <h2 id="reel-title">Let fate pick tonight's dinner.</h2>
+        <div class="spin-actions">
+          <button class="btn" id="spin-btn">Spin for tonight ✨</button>
+          <a class="btn ghost" id="spin-go" href="/recipes/" hidden>Let's cook it →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <p class="eyebrow">Pick your mood</p>
+    <h2>What kind of night is it?</h2>
+    <div class="vibes">
+      {vibes.map((v) => (
+        <a class="vibe" href={`/recipes/?vibe=${v.name}`}>
+          <span>{v.emoji}</span><b>{v.name}</b><small>{v.blurb}</small>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Cooking together, made easy</h2>
+      <ol class="how-grid">
+        <li><span>1</span><b>Pick a recipe</b><p>Choose by mood, time or course, or spin the wheel.</p></li>
+        <li><span>2</span><b>Pick your roles</b><p>Chef 1 and Chef 2 each get their own steps, so nobody's waiting around.</p></li>
+        <li><span>3</span><b>Set the mood</b><p>Every recipe has a drink pairing and a playlist.</p></li>
+        <li><span>4</span><b>Eat together</b><p>Phones down, candles lit.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="row-head">
+      <div><p class="eyebrow">Fresh from the kitchen</p><h2>Latest date night recipes</h2></div>
+      <a href="/recipes/">See all →</a>
+    </div>
+    <div class="grid">{recipes.slice(0, 6).map((r) => <RecipeCard recipe={r} />)}</div>
+    <AdSlot size="banner" />
+    <Newsletter />
+  </section>
+</Base>
+
+<script define:vars={{ spinData }}>
+  const btn = document.getElementById('spin-btn');
+  const emoji = document.getElementById('reel-emoji');
+  const title = document.getElementById('reel-title');
+  const go = document.getElementById('spin-go');
+  btn.addEventListener('click', () => {
+    btn.disabled = true; go.hidden = true;
+    const pick = spinData[Math.floor(Math.random() * spinData.length)];
+    let i = 0, delay = 50;
+    const tick = () => {
+      const r = spinData[i++ % spinData.length];
+      emoji.textContent = r.emoji; title.textContent = r.title;
+      if (delay < 260) { delay *= 1.15; setTimeout(tick, delay); }
+      else {
+        emoji.textContent = pick.emoji; title.textContent = pick.title;
+        go.href = `/recipes/${pick.id}/`; go.hidden = false; btn.disabled = false;
+        btn.textContent = 'Spin again';
+        emoji.parentElement.animate([{ transform: 'scale(1.2)' }, { transform: 'scale(1)' }], { duration: 350, easing: 'ease-out' });
+      }
+    };
+    tick();
+  });
+</script>
+
+<style>
+  .hero { position: relative; overflow: hidden; padding: clamp(64px, 12vw, 140px) 0 clamp(56px, 10vw, 110px); text-align: center;
+    background: radial-gradient(ellipse at top, #ffd9d2 0, transparent 60%), radial-gradient(ellipse at bottom right, #ffe9c7 0, transparent 50%); }
+  .hero-inner { position: relative; z-index: 1; }
+  h1 em { font-style: italic; color: var(--wine); font-weight: 500; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .floaters span { position: absolute; font-size: clamp(2rem, 5vw, 3.6rem); opacity: .85; animation: float 7s ease-in-out infinite; }
+  .floaters span:nth-child(1) { top: 14%; left: 7%; }
+  .floaters span:nth-child(2) { top: 62%; left: 4%; animation-delay: -2s; }
+  .floaters span:nth-child(3) { top: 18%; right: 9%; animation-delay: -4s; }
+  .floaters span:nth-child(4) { top: 68%; right: 6%; animation-delay: -1s; }
+  .floaters span:nth-child(5) { top: 82%; left: 30%; animation-delay: -3s; }
+  .floaters span:nth-child(6) { top: 6%; left: 58%; animation-delay: -5s; }
+  @keyframes float { 50% { transform: translateY(-18px) rotate(8deg); } }
+  @media (max-width: 640px) { .floaters span { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { .floaters span { animation: none; } }
+
+  .spin-wrap { margin-top: -40px; position: relative; z-index: 2; }
+  .spin { display: flex; align-items: center; gap: 32px; background: var(--ink); color: #fff; border-radius: 32px; padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow); }
+  @media (max-width: 640px) { .spin { flex-direction: column; text-align: center; } .spin-actions { justify-content: center; } }
+  .reel { flex: none; width: 120px; height: 120px; border-radius: 28px; display: grid; place-items: center; background: linear-gradient(135deg, var(--coral), var(--wine)); font-size: 4rem; }
+  .spin h2 { color: #fff; margin-bottom: .6em; font-size: clamp(1.4rem, 3vw, 2rem); }
+  .spin .eyebrow { color: var(--gold); margin: 0 0 6px; }
+  .spin-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .spin .btn.ghost { color: #fff; box-shadow: inset 0 0 0 2px #fff; }
+  .spin .btn.ghost:hover { background: #fff; color: var(--ink); }
+
+  .vibes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .vibes { grid-template-columns: repeat(2, 1fr); } }
+  .vibe { background: var(--paper); border-radius: var(--radius); padding: 26px 22px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 4px; box-shadow: 0 1px 0 var(--line); transition: transform .2s, background .2s; }
+  .vibe:hover { transform: translateY(-4px); background: var(--blush); }
+  .vibe span { font-size: 2.4rem; }
+  .vibe b { font-family: var(--display); font-size: 1.35rem; }
+  .vibe small { color: var(--muted); font-size: .9rem; }
+
+  .how { background: var(--paper); padding: clamp(48px, 8vw, 88px) 0; }
+  .how-grid { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .how-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .how-grid { grid-template-columns: 1fr; } }
+  .how-grid span { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--wine); color: #fff; font-family: var(--display); font-weight: 700; font-size: 1.3rem; margin-bottom: 12px; }
+  .how-grid b { font-size: 1.1rem; }
+  .how-grid p { color: var(--muted); margin: 4px 0 0; font-size: .95rem; }
+
+  .row-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 24px; }
+  .row-head a { font-weight: 700; text-decoration: none; white-space: nowrap; }
+</style>

@@ -1,0 +1,14 @@
+---
+// Placeholder for display ads. When approved for AdSense / Mediavine / Raptive,
+// replace the inner markup with their ad code. Keep the reserved height to avoid layout shift.
+interface Props { size?: 'banner' | 'inline'; }
+const { size = 'inline' } = Astro.props;
+---
+<aside class:list={['ad-slot', size]} aria-label="Advertisement">
+  <span>Advertisement</span>
+</aside>
+<style>
+  .ad-slot { display: grid; place-items: center; margin: 32px auto; border: 2px dashed var(--line); border-radius: 14px; color: #c4a9b2; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; background: repeating-linear-gradient(45deg, transparent 0 12px, rgba(241,220,211,.35) 12px 24px); }
+  .inline { min-height: 250px; max-width: 336px; }
+  .banner { min-height: 90px; max-width: 728px; width: 100%; }
+</style>
