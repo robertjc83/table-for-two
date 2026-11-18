@@ -18,7 +18,7 @@ The build fails with a clear message if a field is missing or misspelled.
 
 ## Before launch checklist
 
-- [ ] Buy a domain and replace `tablefortwo.example.com` in `astro.config.mjs` and `public/robots.txt`
+- [ ] Buy a domain and if you buy a custom domain, update it in `astro.config.mjs` and `public/robots.txt`
 - [ ] Deploy (free): push to GitHub, then import into Netlify / Vercel / Cloudflare Pages (build `npm run build`, output `dist`)
 - [ ] Add real food photos and an `image` field to the Recipe JSON-LD (`src/pages/recipes/[slug].astro`)
 - [ ] Connect the newsletter form (`src/components/Newsletter.astro`) to Kit / Beehiiv / Mailchimp
