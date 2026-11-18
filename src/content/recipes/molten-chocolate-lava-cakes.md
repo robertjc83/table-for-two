@@ -1,6 +1,8 @@
 ---
 title: "Molten Chocolate Lava Cakes for Two"
 description: "Two individual chocolate cakes with a gooey, molten center. They take 10 minutes to mix and 12 to bake, so dessert is ready by the time you've cleared the plates."
+image: ./images/molten-lava-cakes.jpg
+imageAlt: "Molten chocolate lava cake cut open with chocolate flowing out, dusted with powdered sugar and topped with raspberries and mint, next to vanilla ice cream"
 emoji: "🍫"
 color: "#7c2d12"
 vibe: Fancy
@@ -20,14 +22,15 @@ ingredients:
   - { qty: 2, unit: "tbsp", item: "sugar" }
   - { qty: 1, unit: "tbsp", item: "all-purpose flour" }
   - { qty: 1, unit: "pinch", item: "salt" }
-  - { item: "cocoa powder, berries and vanilla ice cream to serve" }
+  - { item: "cocoa powder, for the ramekins" }
+  - { item: "powdered sugar, fresh raspberries, mint leaves and vanilla ice cream, to serve" }
 steps:
   - { who: chef1, text: "Heat the oven to 425°F (220°C). Butter two 6-oz ramekins and dust them with cocoa powder." }
   - { who: chef2, text: "Melt the chocolate and butter together in the microwave in 20-second bursts, stirring until smooth." }
   - { who: chef1, text: "Whisk the egg, yolk, sugar and salt hard for 2 minutes, until pale and thick." }
   - { who: both, text: "Fold the chocolate into the eggs, then fold in the flour. Divide the batter between the ramekins. You can make them up to this point before dinner and chill them." }
   - { who: chef2, text: "Bake for 12–14 minutes. The edges should be set and the centers should still wobble. (Add 2 minutes if baking straight from the fridge.)" }
-  - { who: both, text: "Rest for 1 minute, run a knife around the edges, and flip each one onto a plate. Top with ice cream and berries, then cut in together." }
+  - { who: both, text: "Rest for 1 minute, run a knife around the edges, and flip each one onto a plate. Dust with powdered sugar, top with raspberries and a sprig of mint, and add a scoop of vanilla ice cream (a chocolate drizzle is a nice extra). Then cut in together and watch the center ooze out." }
 pairing:
   drink: "Ruby port, espresso, or a glass of bubbly"
   playlist: "Slow soul: Leon Bridges, Sade"
