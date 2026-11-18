@@ -1,6 +1,8 @@
 ---
 title: "20-Minute Lemon Garlic Shrimp Scampi"
 description: "Bright, buttery shrimp scampi over linguine, on the table in 20 minutes. A good pick for a weeknight date when you'd rather spend the evening together than over the stove."
+image: ./images/shrimp-scampi.jpg
+imageAlt: "Golden seared shrimp over linguine in a lemon garlic butter sauce with parsley, Parmesan and lemon wedges"
 emoji: "🍤"
 color: "#ea580c"
 vibe: Playful
@@ -22,11 +24,12 @@ ingredients:
   - { qty: 0.33, unit: "cup", item: "dry white wine (or broth)" }
   - { qty: 1, unit: "", item: "lemon, zested and juiced" }
   - { qty: 2, unit: "tbsp", item: "chopped parsley" }
+  - { item: "grated Parmesan and lemon wedges, to serve" }
 steps:
   - { who: chef1, text: "Boil the linguine in well-salted water until al dente. Save ½ cup of the pasta water before draining." }
   - { who: chef2, text: "Pat the shrimp dry and season with salt. Sear in the oil and 1 tbsp of the butter over medium-high heat for 1 minute per side, then set aside." }
   - { who: chef2, text: "Lower the heat. Add the garlic and chili flakes and cook for 1 minute, then pour in the wine and simmer for 2 minutes." }
-  - { who: both, text: "Add the pasta, shrimp, remaining butter, lemon zest and juice, and a splash of pasta water. Toss until glossy. Shower with parsley." }
+  - { who: both, text: "Add the pasta, shrimp, remaining butter, lemon zest and juice, and a splash of pasta water. Toss until glossy. Shower with parsley and a little grated Parmesan, and serve with lemon wedges for squeezing." }
 pairing:
   drink: "The rest of that bottle of Sauvignon Blanc"
   playlist: "Sunny bossa nova: João Gilberto, Bebel Gilberto"
