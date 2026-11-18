@@ -15,7 +15,15 @@ const d = recipe.data;
 const { Content } = await render(recipe);
 const total = d.prepMinutes + d.cookMinutes;
 const roleLabel = { both: 'Together', chef1: 'Chef 1', chef2: 'Chef 2' };
-const ingText = (i) => [i.qty, i.unit, i.item].filter(Boolean).join(' ');
+const FRACS: [number, string][] = [[0, ''], [0.125, '⅛'], [0.25, '¼'], [0.333, '⅓'], [0.5, '½'], [0.667, '⅔'], [0.75, '¾'], [1, '']];
+const fmtQty = (n: number) => {
+  let whole = Math.floor(n); let best = FRACS.reduce((a, b) => (Math.abs(b[0] - (n - whole)) < Math.abs(a[0] - (n - whole)) ? b : a));
+  if (best[0] === 1) { whole += 1; best = FRACS[0]; }
+  return (whole ? String(whole) : '') + best[1] || '0';
+};
+const ingText = (i) => [i.qty !== undefined ? fmtQty(i.qty) : '', i.unit, i.item].filter(Boolean).join(' ');
+// An ingredient with no qty whose text ends in ':' is a group heading, e.g. "Pico de gallo:"
+const isGroup = (i) => i.qty === undefined && !i.unit && i.item.trim().endsWith(':');
 const related = all.filter((r) => r.id !== recipe.id)
   .sort((a, b) => (b.data.vibe === d.vibe ? 1 : 0) - (a.data.vibe === d.vibe ? 1 : 0)).slice(0, 3);
 
@@ -43,7 +51,7 @@ const jsonLd = {
   recipeCategory: d.course,
   recipeCuisine: d.cuisine,
   keywords: `date night, dinner for two, ${d.vibe.toLowerCase()} date night, ${d.cuisine.toLowerCase()}`,
-  recipeIngredient: d.ingredients.map(ingText),
+  recipeIngredient: d.ingredients.filter((i) => !isGroup(i)).map(ingText),
   recipeInstructions: d.steps.map((s) => ({ '@type': 'HowToStep', text: s.text })),
   ...(photoUrls.length ? { image: photoUrls } : {}),
 };
@@ -103,11 +111,13 @@ const jsonLd = {
             <div>
               <h3>Ingredients</h3>
               <ul class="ings">
-                {d.ingredients.map((i, idx) => (
+                {d.ingredients.map((i) => isGroup(i) ? (
+                  <li class="ing-group">{i.item.trim().slice(0, -1)}</li>
+                ) : (
                   <li>
                     <label>
                       <input type="checkbox" class="no-print" />
-                      <span>{i.qty !== undefined && <b class="qty" data-qty={i.qty}>{i.qty}</b>} {i.unit} {i.item}</span>
+                      <span>{i.qty !== undefined && <b class="qty" data-qty={i.qty}>{fmtQty(i.qty)}</b>} {i.unit} {i.item}</span>
                     </label>
                   </li>
                 ))}
@@ -240,6 +250,7 @@ const jsonLd = {
   .ings li { padding: 10px 0; border-bottom: 1px dashed var(--line); }
   .ings label { display: flex; gap: 12px; cursor: pointer; align-items: flex-start; }
   .ings input { accent-color: var(--wine); width: 18px; height: 18px; margin-top: 4px; flex: none; }
+  .ings li.ing-group { border: 0; padding: 18px 0 2px; font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--wine); }
   .ings li.done span { text-decoration: line-through; opacity: .45; }
   .steps-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
   .steps-head h3 { margin: 0; }
