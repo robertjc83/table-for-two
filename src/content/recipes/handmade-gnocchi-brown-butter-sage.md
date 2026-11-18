@@ -11,7 +11,7 @@ cuisine: Italian
 diet: [Vegetarian]
 difficulty: Medium
 prepMinutes: 45
-cookMinutes: 15
+cookMinutes: 20
 servings: 2
 published: 2026-10-25
 ingredients:
