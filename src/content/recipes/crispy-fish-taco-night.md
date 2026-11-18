@@ -1,6 +1,8 @@
 ---
 title: "Crispy Fish Tacos with Pico de Gallo & Chipotle Crema"
 description: "Crunchy beer-battered fish, fresh homemade pico de gallo and a smoky chipotle crema. You each build your own taco, which makes for a lively, laid-back date night."
+image: ./images/crispy-fish-tacos.jpg
+imageAlt: "Three crispy fish tacos with red cabbage, pico de gallo and chipotle crema, with lime wedges and bowls of pico and crema"
 emoji: "🌮"
 color: "#16a34a"
 vibe: Adventurous
