@@ -1,6 +1,8 @@
 ---
 title: "Tiramisu Cups for Two"
 description: "Make-ahead tiramisu in two glasses: espresso-soaked ladyfingers layered with fluffy mascarpone cream and cocoa. No baking, and it gets better as it chills."
+image: ./images/tiramisu-cups.jpg
+imageAlt: "Two glasses of layered tiramisu topped with cocoa, dark chocolate shavings and mint, with espresso and ladyfingers on the side"
 emoji: "☕"
 color: "#57534e"
 vibe: Cozy
@@ -21,11 +23,12 @@ ingredients:
   - { qty: 1, unit: "tbsp", item: "coffee liqueur or dark rum (optional)" }
   - { qty: 6, unit: "", item: "ladyfingers (savoiardi)" }
   - { item: "unsweetened cocoa powder, for dusting" }
+  - { item: "dark chocolate shavings and fresh mint, to garnish" }
 steps:
   - { who: chef1, text: "Whip the mascarpone, cream, sugar and vanilla to soft, fluffy peaks, about 2 minutes. Don't overbeat." }
   - { who: chef2, text: "Mix the espresso with the liqueur in a shallow bowl. Break the ladyfingers in half." }
   - { who: both, text: "Each of you makes one glass: dip a ladyfinger in the espresso for 1 second per side, lay it in the glass, then add a spoonful of cream. Repeat the layers, finishing with cream." }
-  - { who: both, text: "Chill for at least 2 hours, or overnight. Dust generously with cocoa just before serving." }
+  - { who: both, text: "Chill for at least 2 hours, or overnight. Just before serving, dust generously with cocoa, scatter dark chocolate shavings over the top (run a vegetable peeler along a chocolate bar), and add a small sprig of mint." }
 pairing:
   drink: "Espresso or amaretto on ice"
   playlist: "Italian piano: Ludovico Einaudi"
