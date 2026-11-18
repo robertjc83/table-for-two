@@ -3,8 +3,11 @@ import { glob } from 'astro/loaders';
 
 const recipes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/recipes' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
+    // Optional photo: put the file in src/content/recipes/images/ and reference it as ./images/name.jpg
+    image: image().optional(),
+    imageAlt: z.string().optional(),
     description: z.string(),
     emoji: z.string(),
     color: z.string().default('#ff6b6b'),
