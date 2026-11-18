@@ -1,6 +1,8 @@
 ---
 title: "Garlic Butter Steak & Crispy Smashed Potatoes"
 description: "A steakhouse dinner at home: a cast-iron seared ribeye basted in garlic-thyme butter, plus golden smashed potatoes. One of you handles the steak, the other the potatoes."
+image: ./images/garlic-butter-steak.jpg
+imageAlt: "Sliced medium-rare steak topped with garlic herb butter next to crispy smashed potatoes"
 emoji: "🥩"
 color: "#c2410c"
 vibe: Fancy
