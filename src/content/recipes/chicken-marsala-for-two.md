@@ -1,6 +1,8 @@
 ---
 title: "Creamy Chicken Marsala for Two"
 description: "Golden chicken cutlets in a silky Marsala-mushroom cream sauce. Old-school Italian-American romance in one skillet, ready in 40 minutes."
+image: ./images/chicken-marsala.jpg
+imageAlt: "Chicken Marsala topped with sautéed mushrooms and parsley in a rich Marsala wine sauce"
 emoji: "🍗"
 color: "#b45309"
 vibe: Fancy
