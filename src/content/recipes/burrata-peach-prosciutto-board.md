@@ -1,6 +1,8 @@
 ---
 title: "Burrata, Peach & Prosciutto Board"
 description: "A no-cook starter you can put together in 10 minutes: creamy burrata, juicy peaches, salty prosciutto, honey and basil. Assemble it together and eat it with your hands."
+image: ./images/burrata-peach-prosciutto.jpg
+imageAlt: "Whole burrata drizzled with olive oil and honey on a marble board, surrounded by peach slices, folded prosciutto and fresh basil"
 emoji: "🧀"
 color: "#db2777"
 vibe: Playful
@@ -30,7 +32,7 @@ pairing:
   playlist: "Summer on the Amalfi coast: Sergio Mendes, Laufey"
   mood: "Golden-hour light. Eat it standing at the counter while dinner cooks."
 gear:
-  - { name: "Olive-wood serving board", url: "#affiliate-link" }
+  - { name: "Marble serving board", url: "#affiliate-link" }
 ---
 
 Every good date night starts with something to snack on. This board needs no cooking but looks stunning, and it gives you something to share while the main course cooks.
