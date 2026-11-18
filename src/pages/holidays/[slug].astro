@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { holidays, COURSE_ORDER } from '../../data/holidays';
+
+export function getStaticPaths() {
+  return holidays.map((h) => ({ params: { slug: h.slug }, props: { h } }));
+}
+const { h } = Astro.props;
+const recipes = (await getCollection('recipes', (r) => r.data.occasions.includes(h.key)))
+  .sort((a, b) => COURSE_ORDER.indexOf(a.data.course) - COURSE_ORDER.indexOf(b.data.course));
+const other = holidays.find((x) => x.key !== h.key);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: h.title,
+  itemListElement: recipes.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(`/recipes/${r.id}/`, Astro.site).href })),
+};
+---
+<Base title={h.title} description={h.description} jsonLd={jsonLd}>
+  <section class="hero" style={`--c:${h.color}`}>
+    <div class="snow" aria-hidden="true">{h.key === 'christmas' ? '❄️ ✨ ❄️ ✨ ❄️' : '🍂 🍁 🍂 🍁 🍂'}</div>
+    <div class="wrap">
+      <p class="eyebrow">Holiday date night</p>
+      <h1>{h.emoji} {h.title}</h1>
+      <p class="lede">{h.intro}</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>The menu</h2>
+    <ol class="menu">
+      {recipes.map((r) => (
+        <li><span class="course">{r.data.course}</span><a href={`/recipes/${r.id}/`}>{r.data.emoji} {r.data.title}</a></li>
+      ))}
+    </ol>
+
+    <div class="grid">{recipes.map((r) => <RecipeCard recipe={r} />)}</div>
+
+    <AdSlot size="banner" />
+
+    <div class="plan">
+      <h2>Your game plan</h2>
+      <p class="sub">How to time it all so you're relaxed at the table, not stressed in the kitchen.</p>
+      <ol>
+        {h.plan.map((p) => <li><b>{p.when}</b><span>{p.what}</span></li>)}
+      </ol>
+    </div>
+
+    {other && (
+      <a class="other" href={`/holidays/${other.slug}/`}>
+        <span>{other.emoji}</span>
+        <div><small>Also on the menu</small><b>{other.title} →</b></div>
+      </a>
+    )}
+
+    <Newsletter />
+  </section>
+</Base>
+<style>
+  .hero { position: relative; overflow: hidden; padding: clamp(56px, 10vw, 110px) 0 48px; background: linear-gradient(180deg, color-mix(in srgb, var(--c) 18%, var(--cream)), var(--cream)); }
+  .snow { position: absolute; top: 18px; right: 4%; font-size: clamp(1.4rem, 4vw, 2.4rem); letter-spacing: .4em; opacity: .6; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 680px; }
+  .menu { list-style: none; padding: 0; margin: 0 0 40px; display: grid; gap: 10px; max-width: 680px; }
+  .menu li { display: flex; align-items: center; gap: 14px; background: var(--paper); border-radius: 16px; padding: 14px 18px; box-shadow: 0 1px 0 var(--line); }
+  .course { flex: none; width: 76px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--coral); }
+  .menu a { color: var(--ink); font-weight: 700; text-decoration: none; }
+  .menu a:hover { color: var(--wine); }
+  .plan { background: var(--ink); color: #fff; border-radius: 28px; padding: clamp(24px, 5vw, 48px); margin: 48px 0; }
+  .plan h2 { color: #fff; margin-bottom: .2em; }
+  .sub { color: #cfb3bd; margin: 0 0 24px; }
+  .plan ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+  .plan li { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #4a2a37; }
+  .plan li b { color: var(--gold); }
+  .plan li span { color: #f3dde4; }
+  @media (max-width: 640px) { .plan li { grid-template-columns: 1fr; gap: 4px; } }
+  .other { display: flex; align-items: center; gap: 18px; background: var(--paper); border-radius: var(--radius); padding: 20px 26px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); max-width: 480px; }
+  .other span { font-size: 2.6rem; }
+  .other small { display: block; color: var(--muted); }
+  .other b { font-family: var(--display); font-size: 1.3rem; }
+</style>

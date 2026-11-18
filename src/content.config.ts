@@ -12,7 +12,9 @@ const recipes = defineCollection({
     emoji: z.string(),
     color: z.string().default('#ff6b6b'),
     vibe: z.enum(['Cozy', 'Fancy', 'Adventurous', 'Playful']),
-    course: z.enum(['Main', 'Dessert', 'Starter', 'Full Menu']),
+    course: z.enum(['Main', 'Side', 'Dessert', 'Starter', 'Drink', 'Full Menu']),
+    // Holiday collections this recipe belongs to (see src/data/holidays.ts)
+    occasions: z.array(z.enum(['thanksgiving', 'christmas'])).default([]),
     cuisine: z.string(),
     diet: z.array(z.string()).default([]),
     difficulty: z.enum(['Easy', 'Medium', 'Ambitious']),

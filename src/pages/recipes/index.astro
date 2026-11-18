@@ -5,7 +5,7 @@ import RecipeCard from '../../components/RecipeCard.astro';
 import AdSlot from '../../components/AdSlot.astro';
 const recipes = (await getCollection('recipes')).sort((a, b) => +b.data.published - +a.data.published);
 const vibes = ['All', 'Cozy', 'Fancy', 'Playful', 'Adventurous'];
-const courses = ['All', 'Main', 'Dessert', 'Starter', 'Full Menu'];
+const courses = ['All', 'Starter', 'Main', 'Side', 'Dessert', 'Drink', 'Full Menu'];
 ---
 <Base title="All Date Night Recipes" description="Browse every date night recipe for two, filtered by mood, course, time and diet. Romantic dinners and desserts you cook together at home.">
   <section class="wrap head">
