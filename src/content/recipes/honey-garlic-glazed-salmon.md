@@ -1,6 +1,8 @@
 ---
 title: "Honey Garlic Glazed Salmon with Sesame Green Beans"
 description: "Sticky, glossy honey-garlic salmon with blistered sesame green beans and fluffy rice. Restaurant-pretty in 25 minutes, with one pan each."
+image: ./images/honey-garlic-salmon.jpg
+imageAlt: "Honey garlic glazed salmon fillet topped with scallions and sesame seeds next to blistered green beans"
 emoji: "🐟"
 color: "#e11d48"
 vibe: Playful
