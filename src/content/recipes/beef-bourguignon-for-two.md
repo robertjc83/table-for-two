@@ -1,6 +1,8 @@
 ---
 title: "Slow-Braised Beef Bourguignon for Two"
 description: "French red wine beef stew with tender beef, bacon, mushrooms and pearl onions, slow-cooked in the oven for a rich, glossy sauce. A lazy Sunday afternoon date that fills the house with the smell of dinner."
+image: ./images/beef-bourguignon.jpg
+imageAlt: "Beef bourguignon with tender beef, bacon, mushrooms, pearl onions and carrots in red wine sauce, served with mashed potatoes and parsley"
 emoji: "🍲"
 color: "#7f1d1d"
 vibe: Fancy
@@ -16,7 +18,7 @@ published: 2026-11-19
 ingredients:
   - { qty: 1, unit: "lb", item: "beef chuck, cut into 1½-inch cubes" }
   - { qty: 3, unit: "oz", item: "thick-cut bacon or pancetta, diced" }
-  - { qty: 1, unit: "", item: "carrot, sliced into thick coins" }
+  - { qty: 1, unit: "", item: "large carrot, cut into 1½-inch chunks" }
   - { qty: 1, unit: "", item: "small yellow onion, diced" }
   - { qty: 2, unit: "cloves", item: "garlic, minced" }
   - { qty: 1, unit: "tbsp", item: "tomato paste" }
