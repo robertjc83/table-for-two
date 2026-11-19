@@ -1,6 +1,8 @@
 ---
 title: "Spiced Mulled Wine for Two"
 description: "Red wine gently warmed with orange, cinnamon, cloves, star anise and a little honey. Your kitchen will smell like a European Christmas market in 20 minutes."
+image: ./images/mulled-wine.jpg
+imageAlt: "Two steaming glass mugs of mulled red wine with orange slices, cinnamon sticks, star anise and cloves, with Christmas greenery and candlelight"
 emoji: "🍷"
 color: "#881337"
 vibe: Cozy
@@ -18,14 +20,14 @@ ingredients:
   - { qty: 1, unit: "", item: "orange, sliced into rounds (save 2 slices to garnish)" }
   - { qty: 2, unit: "", item: "cinnamon sticks, plus more to garnish" }
   - { qty: 4, unit: "", item: "whole cloves" }
-  - { qty: 2, unit: "", item: "star anise" }
+  - { qty: 4, unit: "", item: "star anise (2 for the pot, 2 to garnish)" }
   - { qty: 2, unit: "tbsp", item: "honey or maple syrup, to taste" }
   - { qty: 2, unit: "tbsp", item: "brandy (optional)" }
 steps:
   - { who: chef1, text: "Pour the wine into a small pot. Add the orange slices, cinnamon, cloves, star anise and honey." }
   - { who: both, text: "Warm over low heat for 15–20 minutes, until steaming and fragrant. Don't let it boil, or you'll cook off the alcohol and the spices turn bitter." }
   - { who: chef2, text: "Taste and add more honey if you like. Stir in the brandy, if using." }
-  - { who: both, text: "Strain into mugs or heatproof glasses and garnish each with an orange slice and a cinnamon stick." }
+  - { who: both, text: "Strain into mugs or heatproof glasses and garnish each with an orange slice, a cinnamon stick and a star anise." }
 pairing:
   drink: "Serve with gingerbread cookies or baked brie"
   playlist: "Christmas market: Pentatonix, Ella Fitzgerald's Christmas album"
