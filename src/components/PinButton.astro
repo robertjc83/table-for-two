@@ -1,0 +1,27 @@
+---
+// "Save to Pinterest" link. Renders nothing until a pin image exists in public/pins/
+// (generate them with: node scripts/make-pins.mjs). No Pinterest script is loaded.
+import fs from 'node:fs';
+import path from 'node:path';
+interface Props { slug: string; path: string; description: string; variant?: 'solid' | 'ghost'; }
+const { slug, path: pagePath, description, variant = 'solid' } = Astro.props;
+const exists = fs.existsSync(path.join(process.cwd(), 'public/pins', `${slug}.jpg`));
+const href = `https://www.pinterest.com/pin/create/button/?${new URLSearchParams({
+  url: new URL(pagePath, Astro.site).href,
+  media: new URL(`/pins/${slug}.jpg`, Astro.site).href,
+  description,
+})}`;
+---
+{exists && (
+  <a class:list={['pin-btn', variant]} href={href} target="_blank" rel="noopener" aria-label="Save to Pinterest (opens Pinterest)">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 0 0-4.4 23.2c-.1-.9-.2-2.4 0-3.4l1.4-6s-.3-.7-.3-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4-.3 1.2.6 2.2 1.8 2.2 2.1 0 3.8-2.3 3.8-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.4l-.3 1.4c-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.7 0-3.8 2.8-7.3 8-7.3 4.2 0 7.4 3 7.4 7 0 4.2-2.6 7.5-6.3 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.4-1.5 3.2A12 12 0 1 0 12 0z"/></svg>
+    Save to Pinterest
+  </a>
+)}
+<style>
+  .pin-btn { display: inline-flex; align-items: center; gap: .5em; padding: .85em 1.4em; border-radius: 999px; font: 700 1rem var(--body); text-decoration: none; transition: transform .15s, background .15s; }
+  .pin-btn.solid { background: #e60023; color: #fff; box-shadow: 0 10px 24px -12px rgba(230, 0, 35, .6); }
+  .pin-btn.solid:hover { background: #ad081b; transform: translateY(-2px); }
+  .pin-btn.ghost { background: #fff; color: #e60023; box-shadow: inset 0 0 0 2px #e60023; }
+  .pin-btn.ghost:hover { background: #e60023; color: #fff; }
+</style>

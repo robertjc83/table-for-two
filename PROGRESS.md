@@ -56,6 +56,13 @@ Most current photos look AI-generated; over time, replace the most popular ones 
 - [ ] Optional: buy a custom domain and update `astro.config.mjs` + `public/robots.txt`
 - [ ] Optional: start a Pinterest account and pin the holiday pages
 
+### Pinterest (see pinterest/README.md)
+- [x] Pin images for every recipe with a photo + collage pins for the 3 seasonal pages (`node scripts/make-pins.mjs`)
+- [x] "Save to Pinterest" buttons on recipe and seasonal pages
+- [ ] Create a Pinterest business account and boards
+- [ ] Claim the website on Pinterest (send Claude the HTML tag)
+- [ ] Re-run the pin script after each new photo
+
 ### Spotify
 - [x] Every recipe has a "Listen on Spotify" button (searches the playlist's mood label)
 - [ ] Create your own Table for Two playlists in Spotify (good for branding and followers)

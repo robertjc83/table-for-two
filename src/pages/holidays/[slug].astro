@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Newsletter from '../../components/Newsletter.astro';
+import PinButton from '../../components/PinButton.astro';
 import { holidays, COURSE_ORDER } from '../../data/holidays';
 
 export function getStaticPaths() {
@@ -27,6 +28,7 @@ const jsonLd = {
       <p class="eyebrow">{h.key === 'fall' ? 'Seasonal date night' : 'Holiday date night'}</p>
       <h1>{h.emoji} {h.title}</h1>
       <p class="lede">{h.intro}</p>
+      <PinButton slug={h.slug} path={`/holidays/${h.slug}/`} description={`${h.title}: ${h.description}`} />
     </div>
   </section>
 
