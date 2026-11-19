@@ -59,7 +59,7 @@ Most current photos look AI-generated; over time, replace the most popular ones 
 ### E-cookbook (see cookbook/README.md)
 - [x] "Date Night In" PDF: 12 menus, 26 recipes, game plans, shopping lists, planner (`node scripts/make-cookbook.mjs`)
 - [x] Sales page at /cookbook/ with previews, promo on homepage and recipe pages, "Cookbook" in the menu
-- [ ] Create the product on Gumroad / Payhip / Stan Store and send Claude the link (goes in `src/data/shop.ts`)
+- [x] Product live on Payhip: https://payhip.com/b/LPqe3 (in `src/data/shop.ts`)
 - [ ] Rebuild the PDF after the last 6 photos arrive, then re-upload it to the store
 
 ### Pinterest (see pinterest/README.md)

@@ -3,5 +3,5 @@
 export const COOKBOOK = {
   price: '$12',
   salePrice: '', // e.g. '$9' for a launch sale; leave empty for no sale
-  buyUrl: '',
+  buyUrl: 'https://payhip.com/b/LPqe3',
 };
