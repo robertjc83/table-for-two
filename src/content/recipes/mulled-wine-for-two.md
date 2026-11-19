@@ -30,7 +30,7 @@ steps:
   - { who: both, text: "Strain into mugs or heatproof glasses and garnish each with an orange slice, a cinnamon stick and a star anise." }
 pairing:
   drink: "Serve with gingerbread cookies or baked brie"
-  playlist: "Christmas market: Pentatonix, Ella Fitzgerald's Christmas album"
+  playlist: "Christmas market: Pentatonix, Ella Fitzgerald"
   mood: "Blankets, mugs, and a walk to look at the neighborhood lights."
 gear:
   - { name: "Glass mugs with handles", url: "#affiliate-link" }

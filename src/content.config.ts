@@ -35,6 +35,9 @@ const recipes = defineCollection({
       drink: z.string(),
       playlist: z.string(),
       mood: z.string(),
+      // Optional Spotify playlist/album link (copy it from Spotify: Share → Copy link).
+      // When set, an embedded player appears on the recipe page.
+      spotify: z.string().regex(/^https:\/\/open\.spotify\.com\/(intl-[a-z-]+\/)?(playlist|album)\/[A-Za-z0-9]+/, 'Must be an open.spotify.com playlist or album link').optional(),
     }),
     gear: z.array(z.object({ name: z.string(), url: z.string() })).default([]),
   }),

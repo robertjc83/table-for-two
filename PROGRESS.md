@@ -56,6 +56,11 @@ Most current photos look AI-generated; over time, replace the most popular ones 
 - [ ] Optional: buy a custom domain and update `astro.config.mjs` + `public/robots.txt`
 - [ ] Optional: start a Pinterest account and pin the holiday pages
 
+### Spotify
+- [x] Every recipe has a "Listen on Spotify" button (searches the playlist's mood label)
+- [ ] Create your own Table for Two playlists in Spotify (good for branding and followers)
+      and add each link as `spotify:` under `pairing:`; an embedded player then appears on that recipe
+
 ### Recipe ideas for next batches
 - Valentine's Day (publish by early January so it can rank)
 - New Year's Eve menu with champagne

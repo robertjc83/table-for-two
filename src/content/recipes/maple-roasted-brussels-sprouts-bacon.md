@@ -29,8 +29,8 @@ steps:
   - { who: chef2, text: "Whisk the maple syrup and balsamic together." }
   - { who: both, text: "Drizzle the glaze over the hot sprouts right on the pan and toss. Roast for 1–2 minutes more to make it sticky, sprinkle with a little parsley, and serve right away." }
 pairing:
-  drink: "Whatever you're having with the main"
-  playlist: "Same as the main"
+  drink: "Pinot Noir or a dry hard cider"
+  playlist: "Cozy dinner soul: Leon Bridges, Norah Jones"
   mood: "Steal the crispy loose leaves off the pan before serving."
 gear:
   - { name: "Heavy-duty half sheet pan", url: "#affiliate-link" }

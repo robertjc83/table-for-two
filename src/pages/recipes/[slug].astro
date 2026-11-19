@@ -37,6 +37,13 @@ if (d.image) {
   ogImage = imgs[2].src;
 }
 
+// Spotify: an embedded player when the recipe has a playlist link, otherwise a search for the suggested artists
+const spotifyMatch = d.pairing.spotify?.match(/open\.spotify\.com\/(?:intl-[a-z-]+\/)?(playlist|album)\/([A-Za-z0-9]+)/);
+const spotifyEmbed = spotifyMatch ? `https://open.spotify.com/embed/${spotifyMatch[1]}/${spotifyMatch[2]}?utm_source=generator` : null;
+// Search the mood label before the colon ("Low-lit jazz"), which surfaces ready-made playlists
+const playlistQuery = d.pairing.playlist.split(':')[0].trim();
+const spotifyHref = d.pairing.spotify ?? `https://open.spotify.com/search/${encodeURIComponent(playlistQuery)}`;
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Recipe',
@@ -90,9 +97,20 @@ const jsonLd = {
           <h2>Set the mood</h2>
           <div class="vibe-grid">
             <div><span>🍷</span><b>Drink</b><p>{d.pairing.drink}</p></div>
-            <div><span>🎶</span><b>Playlist</b><p>{d.pairing.playlist}</p></div>
+            <div>
+              <span>🎶</span><b>Playlist</b><p>{d.pairing.playlist}</p>
+              <a class="spotify-btn" href={spotifyHref} target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M6.5 9.3c3.7-1.1 8-.8 11.2 1.1M7.2 12.5c3-.9 6.5-.6 9.2 1M7.9 15.5c2.4-.6 5-.4 7.1.8" stroke="#1ed760" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg>
+                {d.pairing.spotify ? 'Open in Spotify' : 'Listen on Spotify'}
+              </a>
+            </div>
             <div><span>🕯️</span><b>Vibe</b><p>{d.pairing.mood}</p></div>
           </div>
+          {spotifyEmbed && (
+            <iframe class="spotify-player" title={`Date night playlist for ${d.title}`} src={spotifyEmbed}
+              width="100%" height="152" frameborder="0" loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          )}
         </div>
 
         <AdSlot size="banner" />
@@ -237,6 +255,10 @@ const jsonLd = {
   .vibe-grid div { background: var(--paper); border-radius: 18px; padding: 18px; box-shadow: 0 1px 0 var(--line); }
   .vibe-grid span { font-size: 1.8rem; display: block; }
   .vibe-grid p { margin: .2em 0 0; color: var(--muted); font-size: .95rem; }
+  .spotify-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: .5em 1em; border-radius: 999px; background: #1ed760; color: #000; font-weight: 700; font-size: .85rem; text-decoration: none; transition: transform .15s, background .15s; }
+  .spotify-btn svg { color: #000; }
+  .spotify-btn:hover { background: #3be477; transform: translateY(-1px); }
+  .spotify-player { display: block; margin-top: 16px; border: 0; border-radius: 14px; }
 
   .recipe-card { background: var(--paper); border-radius: 28px; padding: clamp(20px, 4vw, 40px); box-shadow: var(--shadow); border-top: 8px solid var(--c); scroll-margin-top: 90px; }
   .rc-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
