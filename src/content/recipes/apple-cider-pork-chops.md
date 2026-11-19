@@ -1,6 +1,8 @@
 ---
 title: "Apple Cider Pork Chops with Caramelized Apples"
-description: "Juicy pan-seared pork chops in a tangy apple cider and Dijon pan sauce with soft caramelized apples. Fall in a skillet, on the table in 35 minutes."
+description: "Juicy pan-seared pork chops in a tangy apple cider and mustard pan sauce with soft caramelized apples. Fall in a skillet, on the table in 35 minutes."
+image: ./images/apple-cider-pork-chops.jpg
+imageAlt: "Two golden seared pork chops topped with caramelized apple slices in an apple cider mustard sauce with fresh thyme"
 emoji: "🍎"
 color: "#9a3412"
 vibe: Cozy
@@ -20,7 +22,7 @@ ingredients:
   - { qty: 1, unit: "", item: "crisp apple (Honeycrisp or Pink Lady), cut into thin wedges" }
   - { qty: 1, unit: "", item: "shallot, thinly sliced" }
   - { qty: 0.75, unit: "cup", item: "apple cider (unfiltered, not apple cider vinegar)" }
-  - { qty: 1, unit: "tbsp", item: "Dijon mustard" }
+  - { qty: 1, unit: "tbsp", item: "whole-grain or Dijon mustard" }
   - { qty: 2, unit: "tbsp", item: "heavy cream (optional, for a richer sauce)" }
   - { qty: 3, unit: "sprigs", item: "fresh thyme" }
   - { item: "salt and black pepper" }
@@ -29,8 +31,8 @@ steps:
   - { who: chef2, text: "Start your side. The Maple-Roasted Brussels Sprouts with Bacon go perfectly and roast in the same 25 minutes." }
   - { who: chef1, text: "Heat the oil in a large skillet over medium-high heat. Sear the chops for 4–5 minutes per side, until deeply golden and 140°F (60°C) inside. Move them to a plate and tent with foil. They'll rise to 145°F as they rest." }
   - { who: chef1, text: "Lower the heat to medium and add 1 tbsp of the butter. Add the apple wedges in a single layer and cook for 2–3 minutes per side, until golden and just tender. Add the shallot for the last minute." }
-  - { who: both, text: "Pour in the cider and scrape up the browned bits. Add the thyme and simmer for 4–5 minutes, until the cider has reduced by about half. Whisk in the Dijon, the cream (if using) and the remaining butter, and season to taste." }
-  - { who: both, text: "Return the chops and any resting juices to the pan and spoon the sauce and apples over them. Serve straight from the skillet." }
+  - { who: both, text: "Pour in the cider and scrape up the browned bits. Add the thyme and simmer for 4–5 minutes, until the cider has reduced by about half. Whisk in the mustard, the cream (if using) and the remaining butter, and season to taste." }
+  - { who: both, text: "Return the chops and any resting juices to the pan and spoon the sauce and apples over them. Scatter with fresh thyme leaves and serve straight from the skillet." }
 pairing:
   drink: "Dry hard cider or an off-dry Riesling"
   playlist: "Harvest folk: Mumford & Sons, The Head and the Heart"
