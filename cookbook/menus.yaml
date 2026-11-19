@@ -1,0 +1,200 @@
+# The 12 date-night menus in the e-cookbook. `recipes` are recipe file names (without .md), in serving order.
+- slug: steakhouse-night
+  title: Steakhouse Night
+  vibe: Fancy
+  recipes: [burrata-peach-prosciutto-board, garlic-butter-steak-for-two, molten-chocolate-lava-cakes]
+  intro: The classic special-occasion dinner, without the $150 bill. Creamy burrata to start, a butter-basted steak with crispy potatoes, and molten chocolate cakes for dessert.
+  setting: Cloth napkins, your best glasses, and the lights turned low. Dress up a little, even if you're staying in.
+  plan:
+    - { when: "Afternoon", what: "Make the lava cake batter, fill the ramekins and chill them. Take the burrata out of the fridge 20 minutes before you eat it." }
+    - { when: "1 hour before", what: "Take the steak out of the fridge and season it. Boil the potatoes." }
+    - { when: "40 minutes before", what: "Smash the potatoes and get them roasting. Put out the burrata board and pour the wine." }
+    - { when: "Dinner", what: "Sear and baste the steak while the potatoes crisp. Rest the steak for 8 minutes." }
+    - { when: "As you sit down", what: "Slide the lava cakes into the oven. They need 14–16 minutes straight from the fridge." }
+  questions:
+    - What's the best meal we've ever had together?
+    - If we could eat dinner anywhere in the world tomorrow, where would we go?
+    - What's one thing you want us to celebrate this year?
+
+- slug: little-italy
+  title: A Night in Little Italy
+  vibe: Cozy
+  recipes: [handmade-gnocchi-brown-butter-sage, tiramisu-for-two]
+  intro: A hands-on evening of rolling gnocchi side by side, with flour on the counter and a glass of wine nearby. Tiramisu waits in the fridge for dessert.
+  setting: A checkered tablecloth, a candle in an empty wine bottle, and Italian café music.
+  plan:
+    - { when: "Afternoon", what: "Assemble the tiramisu cups and chill them (at least 2 hours)." }
+    - { when: "1 hour 15 minutes before", what: "Cook the potatoes. Clear a big work surface and put on aprons." }
+    - { when: "45 minutes before", what: "Make the dough together, then roll and cut the gnocchi. Race each other if you like." }
+    - { when: "Dinner", what: "Boil the gnocchi, then sear them in brown butter with sage." }
+    - { when: "Dessert", what: "Dust the tiramisu with cocoa and add the chocolate shavings right before serving." }
+  questions:
+    - What's a skill you'd love for us to learn together?
+    - Which trip would you most like to take with me in the next five years?
+    - What did you think of me the first time we met?
+
+- slug: seaside-trattoria
+  title: Seaside Trattoria
+  vibe: Playful
+  recipes: [lemon-garlic-shrimp-scampi, strawberry-chocolate-fondue]
+  intro: Bright, buttery shrimp scampi that tastes like a vacation, followed by a fondue you'll feed each other. Twenty minutes for dinner, plenty of time for dessert.
+  setting: Eat outside if you can, or set up a picnic blanket on the living room floor.
+  plan:
+    - { when: "30 minutes before", what: "Wash and arrange the fondue dippers and keep them in the fridge. Put the pasta water on to boil." }
+    - { when: "20 minutes before", what: "Cook the linguine while you sear the shrimp and make the sauce." }
+    - { when: "Dinner", what: "Toss everything together and serve with lemon wedges." }
+    - { when: "Dessert", what: "Melt the chocolate into the warm cream at the table and start dipping." }
+  questions:
+    - What's your favorite memory of being by the water?
+    - If we ran away to a seaside town for a year, what would our days look like?
+    - What song always reminds you of summer?
+
+- slug: taco-fiesta
+  title: Taco Night Fiesta
+  vibe: Adventurous
+  recipes: [crispy-fish-taco-night, molten-chocolate-lava-cakes]
+  intro: A build-your-own taco bar with crispy fish, homemade pico de gallo and smoky chipotle crema. Then molten chocolate cakes with a Mexican hot chocolate twist.
+  setting: Bright colors, lots of napkins, and spicy margaritas. No rules.
+  plan:
+    - { when: "Afternoon", what: "Make the lava cake batter with ½ tsp cinnamon and a pinch of cayenne mixed in, fill the ramekins and chill them." }
+    - { when: "1 hour before", what: "Make the pico de gallo and chipotle crema. Set up the topping bar." }
+    - { when: "20 minutes before", what: "Heat the oil and make the batter. Char the tortillas." }
+    - { when: "Dinner", what: "Fry the fish and build your tacos. Rate each other's creations out of 10." }
+    - { when: "As you sit down", what: "Put the lava cakes in the oven (14–16 minutes from the fridge)." }
+  questions:
+    - What's the most adventurous thing you've ever eaten?
+    - If we could live in another country for a year, which one would you pick?
+    - What's something new you'd like us to try this year?
+
+- slug: takeout-fake-out
+  title: Takeout Fake-Out
+  vibe: Adventurous
+  recipes: [thai-red-curry-coconut, strawberry-chocolate-fondue]
+  intro: Skip the delivery app. This red curry with crispy tofu is faster than takeout, and you control the heat. Fondue with pineapple and banana dippers keeps the tropical mood going.
+  setting: String lights, bowls you can hold close, and chopsticks if you have them.
+  plan:
+    - { when: "45 minutes before", what: "Start the jasmine rice. Press and cube the tofu. Prep the vegetables." }
+    - { when: "30 minutes before", what: "Crisp the tofu while the curry simmers." }
+    - { when: "Dinner", what: "Spoon the curry over rice and top with the tofu, Thai basil and lime." }
+    - { when: "Dessert", what: "Add pineapple and banana to the dipper platter and make the fondue." }
+  questions:
+    - What's the spiciest thing you've ever eaten, honestly?
+    - Which city's food scene would you most like to explore with me?
+    - What's a small everyday thing I do that you love?
+
+- slug: weeknight-glow-up
+  title: Weeknight Glow-Up
+  vibe: Playful
+  recipes: [honey-garlic-glazed-salmon, tiramisu-for-two]
+  intro: Proof that a Tuesday can feel special. Glossy honey-garlic salmon is on the table in 25 minutes, and the tiramisu was made the night before.
+  setting: Phones in another room. Even a weeknight deserves a candle.
+  plan:
+    - { when: "The night before", what: "Assemble the tiramisu cups and chill them." }
+    - { when: "25 minutes before", what: "Start the rice and whisk the glaze." }
+    - { when: "15 minutes before", what: "Sear the salmon while the green beans blister." }
+    - { when: "Dinner", what: "Glaze the salmon, plate everything, and finish with scallions and sesame." }
+  questions:
+    - What was the best part of your week so far?
+    - What's something you're looking forward to this month?
+    - How can I make your week a little easier?
+
+- slug: supper-club-classic
+  title: Supper Club Classic
+  vibe: Fancy
+  recipes: [chicken-marsala-for-two, pumpkin-creme-brulee-for-two]
+  intro: Old-school Italian-American romance. Golden chicken Marsala in a creamy mushroom sauce, then crème brûlée you torch at the table.
+  setting: Crooners on the speaker and a slow dance between courses.
+  plan:
+    - { when: "The day before", what: "Bake the crème brûlée custards and chill them overnight." }
+    - { when: "45 minutes before", what: "Pound the chicken cutlets thin. Put the pasta water on to boil." }
+    - { when: "30 minutes before", what: "Fry the cutlets, then make the Marsala sauce while the penne cooks." }
+    - { when: "Dinner", what: "Toss the penne in some of the sauce and plate it with the chicken." }
+    - { when: "Dessert", what: "Sugar the custards and take turns with the torch." }
+  questions:
+    - If we could go back to any decade for one night out, which would it be?
+    - What's a song you'd want us to slow dance to?
+    - What's a family recipe or tradition you'd like to keep alive?
+
+- slug: rainy-night-in
+  title: Rainy Night In
+  vibe: Cozy
+  recipes: [roasted-butternut-squash-soup, wild-mushroom-risotto, skillet-apple-crisp-for-two]
+  intro: A slow, cozy evening for bad weather. Velvety squash soup, a risotto you take turns stirring, and a warm apple crisp straight from the skillet.
+  setting: Sweaters, socks, a blanket on the couch and rain on the window.
+  plan:
+    - { when: "1 hour 30 minutes before", what: "Roast the squash for the soup. Mix the apple crisp filling and topping and keep them separate." }
+    - { when: "1 hour before", what: "Blend the soup and keep it warm. Brown the mushrooms for the risotto." }
+    - { when: "40 minutes before", what: "Start the risotto. Take turns stirring and talking." }
+    - { when: "Dinner", what: "Serve the soup first, then the risotto. Put the apple crisp in the oven as you sit down." }
+  questions:
+    - What's your idea of a perfect lazy day together?
+    - What book, show or movie would you want to share with me next?
+    - What's something that always makes you feel at home?
+
+- slug: fall-harvest-supper
+  title: Fall Harvest Supper
+  vibe: Cozy
+  recipes: [hot-apple-cider-toddy, apple-cider-pork-chops, maple-roasted-brussels-sprouts-bacon, skillet-apple-crisp-for-two]
+  intro: Everything good about autumn on one table. A spiced cider toddy, pork chops in a cider-mustard pan sauce, maple Brussels sprouts with bacon, and apple crisp.
+  setting: Flannel, mini pumpkins on the table, and a bonfire or a fireplace video afterward.
+  plan:
+    - { when: "1 hour before", what: "Make the apple crisp and put it in the oven. Take the chops out of the fridge." }
+    - { when: "40 minutes before", what: "Start the cider toddy on the stove. Roast the Brussels sprouts." }
+    - { when: "25 minutes before", what: "Sear the pork chops and make the cider pan sauce." }
+    - { when: "Dinner", what: "Glaze the sprouts and serve everything from the pans." }
+    - { when: "Dessert", what: "Top the warm apple crisp with vanilla ice cream." }
+  questions:
+    - What's your favorite fall memory from when you were a kid?
+    - What fall tradition should we start together?
+    - What's one thing you're grateful for about us this year?
+
+- slug: slow-sunday-in-paris
+  title: Slow Sunday in Paris
+  vibe: Fancy
+  recipes: [cranberry-pecan-baked-brie, beef-bourguignon-for-two, pumpkin-creme-brulee-for-two]
+  intro: A French bistro afternoon at home. The bourguignon braises for three hours while you snack on baked brie, play a game, or take a nap. Crème brûlée for dessert.
+  setting: French café music, a red-and-white tablecloth, and no plans except dinner.
+  plan:
+    - { when: "The day before", what: "Bake the crème brûlée custards and chill them." }
+    - { when: "4 hours before", what: "Brown the beef and bacon, build the braise and put it in the oven." }
+    - { when: "1 hour before", what: "Bake the brie and open the wine." }
+    - { when: "30 minutes before", what: "Brown the mushrooms and pearl onions. Make mashed potatoes or warm some bread." }
+    - { when: "Dessert", what: "Caramelize the crème brûlée tops." }
+  questions:
+    - Where in Paris would you take me first?
+    - What's something you've always wanted to learn about my family?
+    - What does a perfect Sunday look like to you?
+
+- slug: thanksgiving-for-two
+  title: Thanksgiving for Two
+  vibe: Cozy
+  recipes: [mulled-wine-for-two, herb-roasted-turkey-breast-for-two, sausage-apple-herb-stuffing-for-two, maple-roasted-brussels-sprouts-bacon, pumpkin-creme-brulee-for-two]
+  intro: All the Thanksgiving favorites (turkey, gravy, cranberry, stuffing and pumpkin) scaled down for two, with one cozy afternoon of cooking together.
+  setting: Your nicest plates and a tradition of naming one thing you're thankful for about each other.
+  plan:
+    - { when: "The day before", what: "Bake the crème brûlée custards. Cube the bread for the stuffing and leave it out to dry." }
+    - { when: "2 hours before", what: "Herb-butter the turkey and get it roasting. Make the cranberry sauce." }
+    - { when: "1 hour before", what: "Assemble and bake the stuffing. Start the mulled wine on low." }
+    - { when: "30 minutes before", what: "Roast the Brussels sprouts. Rest the turkey and make the gravy." }
+    - { when: "Dessert", what: "Torch the crème brûlée tops at the table." }
+  questions:
+    - What's one thing you're thankful for about me this year?
+    - What Thanksgiving tradition from your family do you want us to keep?
+    - What's something we did this year that you'll always remember?
+
+- slug: christmas-eve
+  title: Christmas Eve for Two
+  vibe: Fancy
+  recipes: [mulled-wine-for-two, cranberry-pecan-baked-brie, filet-mignon-red-wine-sauce, small-batch-gingerbread-cookies]
+  intro: The tree is lit, the music is on, and dinner feels like a five-star restaurant. Finish the night decorating gingerbread cookies together.
+  setting: Tree lights on, overhead lights off, and Christmas pajamas allowed.
+  plan:
+    - { when: "Afternoon", what: "Make, chill and bake the gingerbread cookies so they're cool by dessert." }
+    - { when: "1 hour before", what: "Start the mulled wine on low. Take the filets out of the fridge." }
+    - { when: "30 minutes before", what: "Bake the brie and enjoy it by the tree." }
+    - { when: "Dinner", what: "Sear the filets and make the red wine sauce while your partner makes the creamy spinach." }
+    - { when: "After dinner", what: "Make the icing and have a gingerbread decorating contest." }
+  questions:
+    - What's your favorite Christmas memory?
+    - What holiday tradition should be ours from now on?
+    - What's one wish you have for us for the new year?

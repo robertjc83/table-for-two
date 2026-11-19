@@ -6,6 +6,7 @@ import AdSlot from '../../components/AdSlot.astro';
 import Newsletter from '../../components/Newsletter.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import PinButton from '../../components/PinButton.astro';
+import CookbookPromo from '../../components/CookbookPromo.astro';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -199,6 +200,7 @@ const jsonLd = {
     </div>
 
     <div class="wrap no-print">
+      <CookbookPromo />
       <Newsletter />
       <h2>More for your next date night</h2>
       <div class="grid">{related.map((r) => <RecipeCard recipe={r} />)}</div>

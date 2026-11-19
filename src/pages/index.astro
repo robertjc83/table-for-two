@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import AdSlot from '../components/AdSlot.astro';
+import CookbookPromo from '../components/CookbookPromo.astro';
 
 const recipes = (await getCollection('recipes')).sort((a, b) => +b.data.published - +a.data.published);
 const spinData = recipes.map((r) => ({ id: r.id, title: r.data.title, emoji: r.data.emoji, vibe: r.data.vibe }));
@@ -79,6 +80,7 @@ const vibes = [
       <a href="/recipes/">See all →</a>
     </div>
     <div class="grid">{recipes.slice(0, 6).map((r) => <RecipeCard recipe={r} />)}</div>
+    <CookbookPromo />
     <AdSlot size="banner" />
     <Newsletter />
   </section>

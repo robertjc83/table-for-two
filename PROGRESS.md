@@ -56,6 +56,12 @@ Most current photos look AI-generated; over time, replace the most popular ones 
 - [ ] Optional: buy a custom domain and update `astro.config.mjs` + `public/robots.txt`
 - [ ] Optional: start a Pinterest account and pin the holiday pages
 
+### E-cookbook (see cookbook/README.md)
+- [x] "Date Night In" PDF: 12 menus, 26 recipes, game plans, shopping lists, planner (`node scripts/make-cookbook.mjs`)
+- [x] Sales page at /cookbook/ with previews, promo on homepage and recipe pages, "Cookbook" in the menu
+- [ ] Create the product on Gumroad / Payhip / Stan Store and send Claude the link (goes in `src/data/shop.ts`)
+- [ ] Rebuild the PDF after the last 6 photos arrive, then re-upload it to the store
+
 ### Pinterest (see pinterest/README.md)
 - [x] Pin images for every recipe with a photo + collage pins for the 3 seasonal pages (`node scripts/make-pins.mjs`)
 - [x] "Save to Pinterest" buttons on recipe and seasonal pages

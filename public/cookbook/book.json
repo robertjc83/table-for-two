@@ -1,0 +1,102 @@
+{
+  "title": "Date Night In",
+  "subtitle": "12 complete dinners for two to cook together",
+  "pages": 63,
+  "menus": [
+    {
+      "title": "Steakhouse Night",
+      "recipes": [
+        "Burrata, Peach & Prosciutto Board",
+        "Garlic Butter Steak & Crispy Smashed Potatoes",
+        "Molten Chocolate Lava Cakes for Two"
+      ]
+    },
+    {
+      "title": "A Night in Little Italy",
+      "recipes": [
+        "Handmade Gnocchi with Brown Butter & Sage",
+        "Tiramisu Cups for Two"
+      ]
+    },
+    {
+      "title": "Seaside Trattoria",
+      "recipes": [
+        "20-Minute Lemon Garlic Shrimp Scampi",
+        "Dark Chocolate Fondue with Strawberries"
+      ]
+    },
+    {
+      "title": "Taco Night Fiesta",
+      "recipes": [
+        "Crispy Fish Tacos with Pico de Gallo & Chipotle Crema",
+        "Molten Chocolate Lava Cakes for Two"
+      ]
+    },
+    {
+      "title": "Takeout Fake-Out",
+      "recipes": [
+        "Thai Red Curry with Coconut & Crispy Tofu",
+        "Dark Chocolate Fondue with Strawberries"
+      ]
+    },
+    {
+      "title": "Weeknight Glow-Up",
+      "recipes": [
+        "Honey Garlic Glazed Salmon with Sesame Green Beans",
+        "Tiramisu Cups for Two"
+      ]
+    },
+    {
+      "title": "Supper Club Classic",
+      "recipes": [
+        "Creamy Chicken Marsala for Two",
+        "Pumpkin Crème Brûlée for Two"
+      ]
+    },
+    {
+      "title": "Rainy Night In",
+      "recipes": [
+        "Roasted Butternut Squash Soup with Brown Butter Sage",
+        "Wild Mushroom Risotto (Take-Turns Stirring)",
+        "Skillet Apple Crisp for Two"
+      ]
+    },
+    {
+      "title": "Fall Harvest Supper",
+      "recipes": [
+        "Hot Apple Cider Toddy for Two",
+        "Apple Cider Pork Chops with Caramelized Apples",
+        "Maple-Roasted Brussels Sprouts with Bacon",
+        "Skillet Apple Crisp for Two"
+      ]
+    },
+    {
+      "title": "Slow Sunday in Paris",
+      "recipes": [
+        "Cranberry Pecan Baked Brie",
+        "Slow-Braised Beef Bourguignon for Two",
+        "Pumpkin Crème Brûlée for Two"
+      ]
+    },
+    {
+      "title": "Thanksgiving for Two",
+      "recipes": [
+        "Spiced Mulled Wine for Two",
+        "Herb-Roasted Turkey Breast for Two with Pan Gravy",
+        "Sausage, Apple & Herb Stuffing for Two",
+        "Maple-Roasted Brussels Sprouts with Bacon",
+        "Pumpkin Crème Brûlée for Two"
+      ]
+    },
+    {
+      "title": "Christmas Eve for Two",
+      "recipes": [
+        "Spiced Mulled Wine for Two",
+        "Cranberry Pecan Baked Brie",
+        "Christmas Eve Filet Mignon with Red Wine Sauce",
+        "Small-Batch Gingerbread Cookie Decorating Date"
+      ]
+    }
+  ],
+  "recipeCount": 26
+}

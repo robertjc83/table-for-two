@@ -1,0 +1,20 @@
+---
+import { COOKBOOK } from '../data/shop';
+import book from '../../public/cookbook/book.json';
+---
+<a class="promo no-print" href="/cookbook/">
+  <img src="/cookbook/cover.jpg" alt="" width="900" height="1165" loading="lazy" />
+  <div>
+    <small>The e-cookbook</small>
+    <b>{book.title}: {book.menus.length} complete date nights</b>
+    <span>Menus, game plans, shopping lists and conversation starters. {COOKBOOK.buyUrl ? `${COOKBOOK.salePrice || COOKBOOK.price} →` : 'Coming soon →'}</span>
+  </div>
+</a>
+<style>
+  .promo { display: flex; align-items: center; gap: 20px; background: linear-gradient(120deg, var(--blush), #ffeedd); border-radius: var(--radius); padding: 18px 22px; text-decoration: none; color: var(--ink); margin: 32px 0; transition: transform .2s; }
+  .promo:hover { transform: translateY(-3px); }
+  .promo img { width: 74px; height: auto; border-radius: 3px 8px 8px 3px; box-shadow: -3px 0 0 #6d0b27, 0 10px 20px -10px rgba(0, 0, 0, .5); flex: none; }
+  .promo small { display: block; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; color: var(--wine); }
+  .promo b { font-family: var(--display); font-size: 1.2rem; display: block; margin: 2px 0; }
+  .promo span { color: var(--muted); font-size: .92rem; }
+</style>
