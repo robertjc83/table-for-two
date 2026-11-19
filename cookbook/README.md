@@ -1,7 +1,8 @@
 # Date Night In: the e-cookbook
 
-- **The product:** `cookbook/dist/date-night-in.pdf`. This is the file you sell. It's kept in this private repository
-  and is **not** published on the website.
+- **The product:** `cookbook/dist/date-night-in.pdf`. This is the file you sell. It is **not** committed to Git
+  (the `dist/` folders are ignored) and **not** published on the website. Keep your own copy (download it, and it
+  will also live in your store). It can be rebuilt any time with the command below.
 - **Menus:** `cookbook/menus.yaml` holds the 12 date nights (recipes, intro, setting, game plan, conversation starters).
 - **Sales page:** `/cookbook/` on the site. The price and buy link are in `src/data/shop.ts`.
 
