@@ -1,6 +1,8 @@
 ---
 title: "Pumpkin Crème Brûlée for Two"
 description: "Silky spiced pumpkin custard under a crackly caramelized sugar top. Make it a day ahead, then take turns with the torch at the table. Pumpkin pie, but more romantic."
+image: ./images/pumpkin-creme-brulee.jpg
+imageAlt: "Two ramekins of pumpkin crème brûlée with crackly caramelized sugar tops, with a small pumpkin and cinnamon sticks"
 emoji: "🎃"
 color: "#ea580c"
 vibe: Fancy
