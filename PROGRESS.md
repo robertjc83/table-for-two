@@ -18,7 +18,7 @@ Done (12): chicken marsala, honey garlic salmon, garlic butter steak, crispy fis
 chocolate fondue, lava cakes, gnocchi, shrimp scampi, Thai red curry, mushroom risotto,
 tiramisu, burrata board.
 
-Still needed (11; Thanksgiving ones first):
+Still needed (10; Thanksgiving ones first):
 - [ ] herb-roasted-turkey-breast-for-two
 - [ ] sausage-apple-herb-stuffing-for-two
 - [ ] pumpkin-creme-brulee-for-two
@@ -32,7 +32,7 @@ Still needed (11; Thanksgiving ones first):
 - [x] creamy-pumpkin-sage-pasta
 - [ ] maple-roasted-brussels-sprouts-bacon (also on the Thanksgiving menu)
 - [ ] skillet-apple-crisp-for-two (also on the Thanksgiving menu)
-- [ ] hot-apple-cider-toddy
+- [x] hot-apple-cider-toddy
 
 Photos go in `src/content/recipes/images/` and are linked with `image:` + `imageAlt:` in the recipe's front matter.
 Most current photos look AI-generated; over time, replace the most popular ones with your own.
