@@ -1,6 +1,8 @@
 ---
 title: "Maple-Roasted Brussels Sprouts with Bacon"
 description: "Crispy, caramelized Brussels sprouts with smoky bacon and a sticky maple-balsamic glaze. A fall side dish that even sprout skeptics love."
+image: ./images/maple-roasted-brussels-sprouts.jpg
+imageAlt: "Caramelized roasted Brussels sprout halves tossed with crispy bacon in a glossy maple-balsamic glaze, sprinkled with parsley"
 emoji: "🥬"
 color: "#4d7c0f"
 vibe: Cozy
@@ -20,11 +22,12 @@ ingredients:
   - { qty: 1, unit: "tbsp", item: "maple syrup" }
   - { qty: 1, unit: "tsp", item: "balsamic vinegar" }
   - { item: "salt, black pepper and a pinch of chili flakes" }
+  - { item: "chopped parsley, to garnish (optional)" }
 steps:
   - { who: chef1, text: "Heat the oven to 425°F (220°C). Toss the sprouts and bacon with the olive oil, salt, pepper and chili flakes on a sheet pan." }
   - { who: chef1, text: "Turn the sprouts cut-side down. This gives them crispy, caramelized faces. Roast for 20–25 minutes, until deeply browned and the bacon is crisp." }
   - { who: chef2, text: "Whisk the maple syrup and balsamic together." }
-  - { who: both, text: "Drizzle the glaze over the hot sprouts right on the pan and toss. Roast for 1–2 minutes more to make it sticky, then serve right away." }
+  - { who: both, text: "Drizzle the glaze over the hot sprouts right on the pan and toss. Roast for 1–2 minutes more to make it sticky, sprinkle with a little parsley, and serve right away." }
 pairing:
   drink: "Whatever you're having with the main"
   playlist: "Same as the main"
