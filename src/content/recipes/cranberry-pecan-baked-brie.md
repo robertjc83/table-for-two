@@ -1,6 +1,8 @@
 ---
 title: "Cranberry Pecan Baked Brie"
 description: "A wheel of brie baked until molten, topped with cranberry sauce, toasted pecans, honey and rosemary. A festive appetizer that takes 5 minutes of work and gets you both standing around the kitchen island."
+image: ./images/cranberry-pecan-baked-brie.jpg
+imageAlt: "Melted baked brie cut open on a marble board, topped with cranberry sauce, honey-glazed pecans and rosemary, with toasted baguette slices"
 emoji: "🧀"
 color: "#9f1239"
 vibe: Cozy
@@ -15,16 +17,16 @@ servings: 2
 published: 2026-11-17
 ingredients:
   - { qty: 1, unit: "", item: "small wheel of brie (8 oz / 225 g)" }
-  - { qty: 3, unit: "tbsp", item: "cranberry sauce (homemade or canned whole-berry)" }
-  - { qty: 2, unit: "tbsp", item: "pecans, roughly chopped" }
+  - { qty: 0.25, unit: "cup", item: "cranberry sauce (homemade or canned whole-berry)" }
+  - { qty: 0.25, unit: "cup", item: "pecan halves" }
   - { qty: 1, unit: "tbsp", item: "honey" }
-  - { qty: 1, unit: "sprig", item: "fresh rosemary, leaves chopped" }
+  - { qty: 2, unit: "sprigs", item: "fresh rosemary (1 finely chopped, 1 to garnish)" }
   - { item: "flaky salt, plus sliced baguette, crackers and apple slices for dipping" }
 steps:
   - { who: chef1, text: "Heat the oven to 350°F (175°C). Score a shallow crosshatch into the top rind of the brie and set it in a small baking dish or on a parchment-lined sheet." }
-  - { who: chef2, text: "Toast the pecans in a dry skillet for 3 minutes until fragrant. Slice the baguette and apple and arrange them on a board with the crackers." }
+  - { who: chef2, text: "Toast the pecan halves in a dry skillet for 3 minutes until fragrant, then toss them with half the honey. Slice and toast the baguette, slice the apple, and arrange them on a board with the crackers." }
   - { who: chef1, text: "Spoon the cranberry sauce over the brie and bake for 12–15 minutes, until the sides feel soft and the cheese is melty inside." }
-  - { who: both, text: "Top with the pecans, rosemary, a drizzle of honey and a pinch of flaky salt. Set it in the middle of the board and dig in while it's warm." }
+  - { who: both, text: "Pile the honey pecans on top, then add the chopped rosemary, the rest of the honey and a pinch of flaky salt. Lay the rosemary sprig on top. Set it in the middle of the board and dig in while it's warm." }
 pairing:
   drink: "Sparkling rosé or mulled wine"
   playlist: "Cozy Christmas jazz: Vince Guaraldi Trio"
