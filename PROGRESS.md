@@ -18,8 +18,8 @@ Done (12): chicken marsala, honey garlic salmon, garlic butter steak, crispy fis
 chocolate fondue, lava cakes, gnocchi, shrimp scampi, Thai red curry, mushroom risotto,
 tiramisu, burrata board.
 
-Still needed (8; Thanksgiving ones first):
-- [ ] herb-roasted-turkey-breast-for-two
+Still needed (7; Thanksgiving ones first):
+- [x] herb-roasted-turkey-breast-for-two
 - [ ] sausage-apple-herb-stuffing-for-two
 - [ ] pumpkin-creme-brulee-for-two
 - [ ] filet-mignon-red-wine-sauce

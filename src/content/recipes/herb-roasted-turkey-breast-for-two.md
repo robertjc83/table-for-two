@@ -1,6 +1,8 @@
 ---
 title: "Herb-Roasted Turkey Breast for Two with Pan Gravy"
 description: "All the Thanksgiving flavor without a 15-pound bird: a juicy herb-butter turkey breast, silky pan gravy and a quick homemade cranberry sauce, ready in about 90 minutes."
+image: ./images/herb-roasted-turkey-breast.jpg
+imageAlt: "Sliced herb-roasted turkey breast with pan gravy, cranberry sauce, mashed potatoes and green beans, with a gravy boat in the background"
 emoji: "🦃"
 color: "#b45309"
 vibe: Cozy
@@ -36,7 +38,7 @@ steps:
   - { who: chef2, text: "Make the cranberry sauce: simmer the cranberries, sugar, orange juice and ¼ cup water for 10 minutes, until most of the berries have burst. Stir in the orange zest and let it cool. It thickens as it cools." }
   - { who: both, text: "Move the turkey to a board, tent it with foil, and rest it for 15 minutes. This is a good time to finish the sides and light the candles." }
   - { who: chef2, text: "Make the gravy: set the roasting pan over medium heat (discard the onions or snack on them). Whisk the flour into the drippings, adding butter if needed, and cook for 1 minute. Slowly whisk in the broth and simmer for 3–5 minutes, until smooth and thick enough to coat a spoon. Season to taste." }
-  - { who: both, text: "Slice the turkey across the grain, pour the gravy over it, and serve with the cranberry sauce and your favorite sides." }
+  - { who: both, text: "Slice the turkey across the grain, pour the gravy over it, and serve with the cranberry sauce, a sprig of fresh herbs and your favorite sides. Mashed potatoes (they love the extra gravy) and simple garlicky green beans are classic." }
 pairing:
   drink: "Pinot Noir or a dry hard cider"
   playlist: "Warm folk: The Lumineers, Gregory Alan Isakov"
