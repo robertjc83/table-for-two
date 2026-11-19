@@ -1,6 +1,8 @@
 ---
 title: "Creamy Pumpkin Sage Pasta"
 description: "Rigatoni in a silky pumpkin, Parmesan and brown butter sauce with crispy sage. A cozy weeknight pasta that tastes like fall and takes 25 minutes."
+image: ./images/creamy-pumpkin-sage-pasta.jpg
+imageAlt: "Rigatoni in a creamy pumpkin sauce topped with crispy fried sage leaves, grated Parmesan and black pepper"
 emoji: "🍝"
 color: "#ea580c"
 vibe: Playful

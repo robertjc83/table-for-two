@@ -18,7 +18,7 @@ Done (12): chicken marsala, honey garlic salmon, garlic butter steak, crispy fis
 chocolate fondue, lava cakes, gnocchi, shrimp scampi, Thai red curry, mushroom risotto,
 tiramisu, burrata board.
 
-Still needed (12; Thanksgiving ones first):
+Still needed (11; Thanksgiving ones first):
 - [ ] herb-roasted-turkey-breast-for-two
 - [ ] sausage-apple-herb-stuffing-for-two
 - [ ] pumpkin-creme-brulee-for-two
@@ -29,7 +29,7 @@ Still needed (12; Thanksgiving ones first):
 - [ ] roasted-butternut-squash-soup
 - [x] apple-cider-pork-chops
 - [x] beef-bourguignon-for-two
-- [ ] creamy-pumpkin-sage-pasta
+- [x] creamy-pumpkin-sage-pasta
 - [ ] maple-roasted-brussels-sprouts-bacon (also on the Thanksgiving menu)
 - [ ] skillet-apple-crisp-for-two (also on the Thanksgiving menu)
 - [ ] hot-apple-cider-toddy
