@@ -1,6 +1,8 @@
 ---
 title: "Roasted Butternut Squash Soup with Brown Butter Sage"
 description: "Velvety roasted butternut squash soup topped with nutty brown butter, crispy sage and toasted pepitas. A cozy fall starter that also makes a light dinner with crusty bread."
+image: ./images/roasted-butternut-squash-soup.jpg
+imageAlt: "Bowl of creamy roasted butternut squash soup swirled with brown butter and topped with crispy sage leaves, toasted pepitas and black pepper"
 emoji: "🥣"
 color: "#d97706"
 vibe: Cozy
