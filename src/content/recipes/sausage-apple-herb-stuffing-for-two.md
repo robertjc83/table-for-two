@@ -6,7 +6,7 @@ color: "#a16207"
 vibe: Cozy
 course: Side
 cuisine: American
-occasions: [thanksgiving, christmas]
+occasions: [thanksgiving, christmas, fall]
 diet: []
 difficulty: Easy
 prepMinutes: 15

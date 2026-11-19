@@ -6,7 +6,7 @@ color: "#ea580c"
 vibe: Fancy
 course: Dessert
 cuisine: French
-occasions: [thanksgiving]
+occasions: [thanksgiving, fall]
 diet: [Vegetarian, Gluten-Free]
 difficulty: Medium
 prepMinutes: 15

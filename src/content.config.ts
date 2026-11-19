@@ -14,7 +14,7 @@ const recipes = defineCollection({
     vibe: z.enum(['Cozy', 'Fancy', 'Adventurous', 'Playful']),
     course: z.enum(['Main', 'Side', 'Dessert', 'Starter', 'Drink', 'Full Menu']),
     // Holiday collections this recipe belongs to (see src/data/holidays.ts)
-    occasions: z.array(z.enum(['thanksgiving', 'christmas'])).default([]),
+    occasions: z.array(z.enum(['thanksgiving', 'christmas', 'fall'])).default([]),
     cuisine: z.string(),
     diet: z.array(z.string()).default([]),
     difficulty: z.enum(['Easy', 'Medium', 'Ambitious']),

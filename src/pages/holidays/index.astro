@@ -2,11 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import { holidays } from '../../data/holidays';
 ---
-<Base title="Holiday Date Night Recipes" description="Holiday dinners for two: a cozy Thanksgiving for two and a romantic Christmas Eve dinner, with full menus and a game plan for cooking together.">
+<Base title="Holiday & Seasonal Date Night Recipes" description="Seasonal dinners for two: cozy fall recipes, Thanksgiving for two and a romantic Christmas Eve dinner, with full menus and plans for cooking together.">
   <section class="wrap head">
-    <p class="eyebrow">Holiday date nights</p>
-    <h1>Holidays for two</h1>
-    <p class="lede">Full holiday menus scaled down for two, so you get the feast without a week of leftovers.</p>
+    <p class="eyebrow">Holidays & seasons</p>
+    <h1>Holidays & seasons for two</h1>
+    <p class="lede">Seasonal menus and holiday feasts scaled down for two, so you get all the cozy without a week of leftovers.</p>
     <div class="tiles">
       {holidays.map((h) => (
         <a class="tile" href={`/holidays/${h.slug}/`} style={`--c:${h.color}`}>

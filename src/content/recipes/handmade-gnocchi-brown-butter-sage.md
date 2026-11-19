@@ -8,6 +8,7 @@ color: "#a16207"
 vibe: Cozy
 course: Main
 cuisine: Italian
+occasions: [fall]
 diet: [Vegetarian]
 difficulty: Medium
 prepMinutes: 45

@@ -6,7 +6,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === 'Table for Two' ? 'Table for Two | Date Night Recipes for Couples' : `${title} | Table for Two`;
 const nav = [
   { href: '/recipes/', label: 'Recipes' },
-  { href: '/holidays/', label: 'Holidays' },
+  { href: '/holidays/', label: 'Seasonal' },
   { href: '/date-night-planner/', label: 'Date Night Planner' },
   { href: '/about/', label: 'About' },
 ];
@@ -50,6 +50,7 @@ const nav = [
       </div>
       <div class="links">
         <a href="/recipes/">All recipes</a>
+        <a href="/holidays/fall-date-night-recipes/">Fall recipes</a>
         <a href="/holidays/thanksgiving-dinner-for-two/">Thanksgiving for two</a>
         <a href="/holidays/christmas-dinner-for-two/">Christmas for two</a>
         <a href="/date-night-planner/">Planner</a>
