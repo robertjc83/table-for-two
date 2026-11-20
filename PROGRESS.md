@@ -51,7 +51,8 @@ Most current photos look AI-generated; over time, replace the most popular ones 
 - [ ] Write the About page story (`src/pages/about.astro`); a photo of you two helps
 - [ ] Connect the newsletter form to Kit / Beehiiv / Mailchimp (`src/components/Newsletter.astro`)
 - [ ] Review the Privacy page template (`src/pages/privacy.astro`) and add a real contact email
-- [ ] Join Amazon Associates, then put the tracking ID in `AMAZON.tag` (src/data/shop.ts). Gear items then link to tagged Amazon searches and the Amazon disclosure turns on. Optional: add `url:` product links (from Amazon's SiteStripe) for best sellers
+- [x] Amazon Associates: tracking ID `tablefortwo0b-20` set in `src/data/shop.ts`; all gear items link to tagged Amazon searches
+- [ ] Amazon: make 3 qualifying sales within 180 days (by about May 19, 2027). Optional: swap in SiteStripe product links (`url:`) for best sellers
 - [ ] 26 recipes reached: apply to Google AdSense once the About page, privacy contact email and more photos are done (paste ad code into `src/components/AdSlot.astro`)
 - [ ] Optional: buy a custom domain and update `astro.config.mjs` + `public/robots.txt`
 - [ ] Optional: start a Pinterest account and pin the holiday pages

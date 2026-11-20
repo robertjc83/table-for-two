@@ -10,7 +10,7 @@ export const COOKBOOK = {
 // Gear items then link to Amazon (a search for the item, or a product link if the recipe gives one),
 // and the required Amazon disclosure appears in the footer and on the Privacy page.
 export const AMAZON = {
-  tag: '',
+  tag: 'tablefortwo0b-20',
   store: 'https://www.amazon.com',
 };
 
