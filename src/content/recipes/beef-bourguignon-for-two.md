@@ -43,7 +43,7 @@ pairing:
   playlist: "French café: Édith Piaf, Françoise Hardy, Serge Gainsbourg"
   mood: "A rainy Sunday, a candle on the table, and no plans except dinner."
 gear:
-  - { name: "Small enameled Dutch oven (3–4 qt)", url: "#affiliate-link" }
+  - { name: "Small enameled Dutch oven (3–4 qt)" }
 ---
 
 This is the dish for a slow day together. It takes 30 minutes of hands-on work, then three hours in the oven while your home starts to smell like a French bistro.

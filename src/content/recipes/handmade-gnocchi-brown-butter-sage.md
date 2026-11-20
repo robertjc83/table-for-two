@@ -39,9 +39,9 @@ pairing:
   playlist: "Italian café: Paolo Conte, Mina"
   mood: "Flour on the counter, aprons on. It's meant to be messy."
 gear:
-  - { name: "Potato ricer", url: "#affiliate-link" }
-  - { name: "Gnocchi board", url: "#affiliate-link" }
-  - { name: "Matching aprons for two", url: "#affiliate-link" }
+  - { name: "Potato ricer" }
+  - { name: "Gnocchi board" }
+  - { name: "Matching aprons for two" }
 ---
 
 There's something about making pasta by hand together: everyone's hands are busy, the conversation flows, and the result tastes like you've been to Italy.

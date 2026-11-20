@@ -35,7 +35,7 @@ pairing:
   playlist: "Sunny bossa nova: João Gilberto, Bebel Gilberto"
   mood: "Eat outside if you can, or on the floor with a picnic blanket."
 gear:
-  - { name: "12-inch stainless skillet", url: "#affiliate-link" }
+  - { name: "12-inch stainless skillet" }
 ---
 
 Short on time but still want it to feel special? Scampi tastes like a seaside trattoria and is faster than ordering takeout.

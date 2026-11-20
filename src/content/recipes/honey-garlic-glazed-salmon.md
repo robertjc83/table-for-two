@@ -36,7 +36,7 @@ pairing:
   playlist: "City-pop and lo-fi: Mariya Takeuchi, Tatsuro Yamashita"
   mood: "Use chopsticks and small bowls, and have a contest over who makes the neatest plate."
 gear:
-  - { name: "Nonstick fish spatula", url: "#affiliate-link" }
+  - { name: "Nonstick fish spatula" }
 ---
 
 Salmon is one of the easiest ways to make a weeknight feel like an occasion. The glaze caramelizes in the pan in minutes, and you each get your own pan, so nobody gets in anyone's way.

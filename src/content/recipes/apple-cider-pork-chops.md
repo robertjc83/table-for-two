@@ -38,8 +38,8 @@ pairing:
   playlist: "Harvest folk: Mumford & Sons, The Head and the Heart"
   mood: "Flannel shirts and a table set with mini pumpkins."
 gear:
-  - { name: "12-inch stainless skillet", url: "#affiliate-link" }
-  - { name: "Instant-read meat thermometer", url: "#affiliate-link" }
+  - { name: "12-inch stainless skillet" }
+  - { name: "Instant-read meat thermometer" }
 ---
 
 Pork and apples are a classic fall pairing, and the cider pan sauce takes only 5 minutes. Use bone-in chops if you can: they stay juicier and have more flavor.

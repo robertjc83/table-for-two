@@ -35,7 +35,7 @@ pairing:
   playlist: "Autumn acoustic: Fleet Foxes, Norah Jones"
   mood: "Fight over the crispy corner pieces."
 gear:
-  - { name: "Small ceramic baking dish", url: "#affiliate-link" }
+  - { name: "Small ceramic baking dish" }
 ---
 
 Stuffing is the best part of Thanksgiving, and this version makes just enough for two (with a little left over for a next-day turkey sandwich). Make it a day ahead and bake it right before dinner, and it's even better.

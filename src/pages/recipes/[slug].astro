@@ -7,6 +7,7 @@ import Newsletter from '../../components/Newsletter.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import PinButton from '../../components/PinButton.astro';
 import CookbookPromo from '../../components/CookbookPromo.astro';
+import { gearLink } from '../../data/shop';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -48,6 +49,8 @@ const spotifyEmbed = spotifyMatch ? `https://open.spotify.com/embed/${spotifyMat
 const playlistQuery = d.pairing.playlist.split(':')[0].trim();
 const spotifyHref = d.pairing.spotify ?? `https://open.spotify.com/search/${encodeURIComponent(playlistQuery)}`;
 
+const gear = d.gear.map((g) => ({ name: g.name, href: gearLink(g) }));
+const hasGearLinks = gear.some((g) => g.href);
 const pinDescription = `${d.title}: ${d.description}`;
 const hasPin = fs.existsSync(path.join(process.cwd(), 'public/pins', `${recipe.id}.jpg`));
 
@@ -174,8 +177,8 @@ const jsonLd = {
         {d.gear.length > 0 && (
           <section class="gear no-print">
             <h3>🧰 What we use for this one</h3>
-            <ul>{d.gear.map((g) => <li><a href={g.url} rel="sponsored nofollow noopener" target="_blank">{g.name} →</a></li>)}</ul>
-            <small>Affiliate links: we may earn a small commission, at no extra cost to you.</small>
+            <ul>{gear.map((g) => <li>{g.href ? <a href={g.href} rel="sponsored nofollow noopener" target="_blank">{g.name} →</a> : <span>{g.name}</span>}</li>)}</ul>
+            {hasGearLinks && <small>Affiliate links: we may earn a small commission, at no extra cost to you.</small>}
           </section>
         )}
       </div>
@@ -311,6 +314,7 @@ const jsonLd = {
 
   .gear { margin-top: 32px; background: var(--paper); border-radius: var(--radius); padding: 24px 28px; border: 2px solid var(--line); }
   .gear ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .gear span { display: inline-block; background: var(--cream); padding: .5em 1em; border-radius: 999px; font-weight: 700; color: var(--muted); }
   .gear a { display: inline-block; background: var(--cream); padding: .5em 1em; border-radius: 999px; text-decoration: none; font-weight: 700; }
   .gear small { color: var(--muted); }
 </style>

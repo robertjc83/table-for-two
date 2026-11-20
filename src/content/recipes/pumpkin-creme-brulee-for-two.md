@@ -37,8 +37,8 @@ pairing:
   playlist: "Fireside jazz: Ella Fitzgerald, Louis Armstrong"
   mood: "Dessert by the fireplace (or a candle-filled living room)."
 gear:
-  - { name: "Kitchen torch", url: "#affiliate-link" }
-  - { name: "6-oz ramekins (set of 4)", url: "#affiliate-link" }
+  - { name: "Kitchen torch" }
+  - { name: "6-oz ramekins (set of 4)" }
 ---
 
 Crème brûlée feels like a fancy restaurant dessert, but it's mostly hands-off, and you can make it the day before. Cracking the caramelized top with your spoon is half the fun.

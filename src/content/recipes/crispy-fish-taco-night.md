@@ -47,8 +47,8 @@ pairing:
   playlist: "Upbeat Latin: Buena Vista Social Club, Natalia Lafourcade"
   mood: "Bright colors, lots of napkins, no rules."
 gear:
-  - { name: "Tortilla warmer", url: "#affiliate-link" }
-  - { name: "Clip-on frying thermometer", url: "#affiliate-link" }
+  - { name: "Tortilla warmer" }
+  - { name: "Clip-on frying thermometer" }
 ---
 
 Taco night is the most relaxed kind of date night: no plating stress, lots of choices, and plenty of laughing at overstuffed tortillas.

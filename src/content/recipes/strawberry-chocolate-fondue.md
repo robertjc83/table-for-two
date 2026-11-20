@@ -31,7 +31,7 @@ pairing:
   playlist: "Slow jams: Daniel Caesar, H.E.R."
   mood: "Sit on the couch with a blanket, the fondue, and a movie you both love."
 gear:
-  - { name: "Ceramic fondue set for two", url: "#affiliate-link" }
+  - { name: "Ceramic fondue set for two" }
 ---
 
 Fondue is interactive, a little silly, and impossible to eat without laughing. It's ideal for anniversaries or Valentine's Day, or any night that needs something sweet.

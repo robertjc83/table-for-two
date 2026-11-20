@@ -42,8 +42,8 @@ pairing:
   playlist: "Classic Christmas: Bing Crosby, Nat King Cole, Michael Bublé"
   mood: "Tree lights on, overhead lights off, and Christmas pajamas allowed (even encouraged)."
 gear:
-  - { name: "12-inch cast-iron skillet", url: "#affiliate-link" }
-  - { name: "Steak knives set", url: "#affiliate-link" }
+  - { name: "12-inch cast-iron skillet" }
+  - { name: "Steak knives set" }
 ---
 
 Christmas Eve calls for something special, and nothing beats a perfectly seared filet. It's the most tender cut there is, it cooks in about 8 minutes, and the pan sauce uses the browned bits left in the pan.

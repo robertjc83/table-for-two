@@ -39,7 +39,8 @@ const recipes = defineCollection({
       // When set, an embedded player appears on the recipe page.
       spotify: z.string().regex(/^https:\/\/open\.spotify\.com\/(intl-[a-z-]+\/)?(playlist|album)\/[A-Za-z0-9]+/, 'Must be an open.spotify.com playlist or album link').optional(),
     }),
-    gear: z.array(z.object({ name: z.string(), url: z.string() })).default([]),
+    // Optional `url`: a specific product link. Without one, the item links to an Amazon search once AMAZON.tag is set.
+    gear: z.array(z.object({ name: z.string(), url: z.string().url().optional() })).default([]),
   }),
 });
 

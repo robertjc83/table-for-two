@@ -33,7 +33,7 @@ pairing:
   playlist: "Cozy dinner soul: Leon Bridges, Norah Jones"
   mood: "Steal the crispy loose leaves off the pan before serving."
 gear:
-  - { name: "Heavy-duty half sheet pan", url: "#affiliate-link" }
+  - { name: "Heavy-duty half sheet pan" }
 ---
 
 The secret to Brussels sprouts people actually want to eat: high heat, cut-side down, and don't stir them. Serve with [Apple Cider Pork Chops](/recipes/apple-cider-pork-chops/) or on your Thanksgiving table.

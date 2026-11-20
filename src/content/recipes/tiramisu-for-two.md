@@ -34,8 +34,8 @@ pairing:
   playlist: "Italian piano: Ludovico Einaudi"
   mood: "Make these in the afternoon. They're a reward waiting in the fridge."
 gear:
-  - { name: "Stemless dessert glasses", url: "#affiliate-link" }
-  - { name: "Hand mixer", url: "#affiliate-link" }
+  - { name: "Stemless dessert glasses" }
+  - { name: "Hand mixer" }
 ---
 
 Tiramisu literally means "pick me up." This version for two is perfect for date nights because it's ready before your guest (or partner) even arrives.

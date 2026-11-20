@@ -44,8 +44,8 @@ pairing:
   playlist: "Warm folk: The Lumineers, Gregory Alan Isakov"
   mood: "Use your nicest plates and take turns saying one thing you're thankful for about each other."
 gear:
-  - { name: "Instant-read meat thermometer", url: "#affiliate-link" }
-  - { name: "Small roasting pan with rack", url: "#affiliate-link" }
+  - { name: "Instant-read meat thermometer" }
+  - { name: "Small roasting pan with rack" }
 ---
 
 Thanksgiving for two doesn't need a whole turkey and a week of leftovers. A single turkey breast roasts in about an hour, stays juicy under a layer of herb butter, and gives you plenty of drippings for real gravy.

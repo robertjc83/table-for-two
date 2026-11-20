@@ -37,8 +37,8 @@ pairing:
   playlist: "Rainy-day acoustic: Iron & Wine, Bon Iver"
   mood: "Ideal for a rainy night in. Sweaters strongly encouraged."
 gear:
-  - { name: "Enameled Dutch oven", url: "#affiliate-link" }
-  - { name: "Wooden risotto spoon", url: "#affiliate-link" }
+  - { name: "Enameled Dutch oven" }
+  - { name: "Wooden risotto spoon" }
 ---
 
 Risotto has a reputation for being fussy, but all it really needs is someone stirring the pot, and with two of you that's easy. Use the stirring time to play a round of "36 Questions."

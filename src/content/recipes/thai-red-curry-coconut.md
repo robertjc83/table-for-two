@@ -40,8 +40,8 @@ pairing:
   playlist: "Thai funk and chill: Khruangbin, Phum Viphurit"
   mood: "String lights, bowls held close, and a spice-tolerance contest."
 gear:
-  - { name: "Rice cooker", url: "#affiliate-link" }
-  - { name: "Tofu press", url: "#affiliate-link" }
+  - { name: "Rice cooker" }
+  - { name: "Tofu press" }
 ---
 
 Swap takeout for this: it's faster than delivery, and you control the heat. Add the tofu to the curry right before serving so it stays crispy.

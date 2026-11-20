@@ -36,8 +36,8 @@ pairing:
   playlist: "Low-lit jazz: Chet Baker, Norah Jones"
   mood: "Dim the lights, use cloth napkins and dress up a little."
 gear:
-  - { name: "10-inch cast-iron skillet", url: "#affiliate-link" }
-  - { name: "Instant-read meat thermometer", url: "#affiliate-link" }
+  - { name: "10-inch cast-iron skillet" }
+  - { name: "Instant-read meat thermometer" }
 ---
 
 Steak night is the classic date-night dinner, and a restaurant will charge you $120 for it. This version costs about a quarter of that and tastes just as good, especially if you've never basted a steak in butter before.

@@ -38,7 +38,7 @@ pairing:
   playlist: "Cozy coffeehouse: Norah Jones, Laufey"
   mood: "A weeknight dinner on the couch with a fall movie."
 gear:
-  - { name: "Microplane grater", url: "#affiliate-link" }
+  - { name: "Microplane grater" }
 ---
 
 This is what to make with the rest of that can of pumpkin. It looks and tastes like it took much longer than 25 minutes, and it's very easy to love.

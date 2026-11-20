@@ -33,8 +33,8 @@ pairing:
   playlist: "Christmas market: Pentatonix, Ella Fitzgerald"
   mood: "Blankets, mugs, and a walk to look at the neighborhood lights."
 gear:
-  - { name: "Glass mugs with handles", url: "#affiliate-link" }
-  - { name: "Mulling spice kit", url: "#affiliate-link" }
+  - { name: "Glass mugs with handles" }
+  - { name: "Mulling spice kit" }
 ---
 
 Mulled wine (Glühwein in Germany) is the official drink of cold December nights. It's nearly impossible to mess up, and it costs less than two cocktails at a bar.

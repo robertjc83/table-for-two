@@ -41,7 +41,7 @@ pairing:
   playlist: "Soft acoustic: Iron & Wine, Jack Johnson"
   mood: "Eat it in front of the fireplace (or a fireplace video on the TV)."
 gear:
-  - { name: "6-inch mini cast-iron skillet", url: "#affiliate-link" }
+  - { name: "6-inch mini cast-iron skillet" }
 ---
 
 Apple crisp is the easiest fall dessert there is: no pie crust and no rolling, but all the flavor of apple pie. Put it in the oven as you sit down to dinner, and it'll be ready when you finish eating.

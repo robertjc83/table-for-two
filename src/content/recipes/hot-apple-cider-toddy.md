@@ -35,7 +35,7 @@ pairing:
   playlist: "Bonfire acoustic: Fleet Foxes, Bon Iver"
   mood: "A bonfire, a porch swing, or a walk under the fall leaves."
 gear:
-  - { name: "Insulated glass mugs", url: "#affiliate-link" }
+  - { name: "Insulated glass mugs" }
 ---
 
 This is the drink that makes chilly evenings something to look forward to. It's warm, spiced and lightly sweet, with just enough bourbon to warm you up.

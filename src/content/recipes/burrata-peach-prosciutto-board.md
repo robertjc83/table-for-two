@@ -32,7 +32,7 @@ pairing:
   playlist: "Summer on the Amalfi coast: Sergio Mendes, Laufey"
   mood: "Golden-hour light. Eat it standing at the counter while dinner cooks."
 gear:
-  - { name: "Marble serving board", url: "#affiliate-link" }
+  - { name: "Marble serving board" }
 ---
 
 Every good date night starts with something to snack on. This board needs no cooking but looks stunning, and it gives you something to share while the main course cooks.

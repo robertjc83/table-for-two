@@ -41,8 +41,8 @@ pairing:
   playlist: "Autumn indie: Bon Iver, Phoebe Bridgers"
   mood: "Big mugs of soup, thick socks, and a window cracked to smell the fall air."
 gear:
-  - { name: "Immersion blender", url: "#affiliate-link" }
-  - { name: "Y-peeler for squash", url: "#affiliate-link" }
+  - { name: "Immersion blender" }
+  - { name: "Y-peeler for squash" }
 ---
 
 Roasting the squash first is what makes this soup taste so deep and sweet; boiled squash can't compare. The brown butter and crispy sage on top make it feel like a restaurant starter.

@@ -36,7 +36,7 @@ pairing:
   playlist: "Slow soul: Leon Bridges, Sade"
   mood: "Candles and one spoon per cake. Optional: share one and save the other for breakfast."
 gear:
-  - { name: "6-oz ramekins (set of 4)", url: "#affiliate-link" }
+  - { name: "6-oz ramekins (set of 4)" }
 ---
 
 If you only make one dessert from this site, make this one. It looks impressive but is nearly foolproof, and you can make the batter before dinner and bake it when you sit down to eat.

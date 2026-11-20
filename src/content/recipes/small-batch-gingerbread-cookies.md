@@ -43,8 +43,8 @@ pairing:
   playlist: "Holiday pop: Mariah Carey, Wham!, Kelly Clarkson"
   mood: "Matching aprons, flour everywhere, and a Christmas movie playing."
 gear:
-  - { name: "Christmas cookie cutter set", url: "#affiliate-link" }
-  - { name: "Rolling pin with thickness guides", url: "#affiliate-link" }
+  - { name: "Christmas cookie cutter set" }
+  - { name: "Rolling pin with thickness guides" }
 ---
 
 Cookie decorating is the most fun you can have on a December night in. Nobody needs to be good at it; the lopsided gingerbread people are the best part.

@@ -32,8 +32,8 @@ pairing:
   playlist: "Cozy Christmas jazz: Vince Guaraldi Trio"
   mood: "Snack by the tree with the lights on and everything else off."
 gear:
-  - { name: "Mini brie baker", url: "#affiliate-link" }
-  - { name: "Cheese board and knife set", url: "#affiliate-link" }
+  - { name: "Mini brie baker" }
+  - { name: "Cheese board and knife set" }
 ---
 
 This is the appetizer you'll make every holiday from now on. It's warm, gooey, sweet and salty, and it uses up leftover Thanksgiving cranberry sauce.

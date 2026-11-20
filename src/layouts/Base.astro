@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { AMAZON } from '../data/shop';
 interface Props { title: string; description: string; jsonLd?: object; image?: string; }
 const { title, description, jsonLd, image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -60,7 +61,7 @@ const nav = [
         <a href="/privacy/">Privacy & disclosures</a>
       </div>
     </div>
-    <p class="wrap fine">© {new Date().getFullYear()} Table for Two. Some links are affiliate links; we may earn a small commission at no cost to you.</p>
+    <p class="wrap fine">© {new Date().getFullYear()} Table for Two. Some links are affiliate links; we may earn a small commission at no cost to you.{AMAZON.tag && ' As an Amazon Associate we earn from qualifying purchases.'}</p>
   </footer>
 </body>
 </html>

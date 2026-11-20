@@ -38,8 +38,8 @@ pairing:
   playlist: "Crooners: Dean Martin, Frank Sinatra"
   mood: "Red-checked tablecloth, a candle in a wine bottle, and a slow dance between courses."
 gear:
-  - { name: "Meat mallet", url: "#affiliate-link" }
-  - { name: "12-inch stainless skillet", url: "#affiliate-link" }
+  - { name: "Meat mallet" }
+  - { name: "12-inch stainless skillet" }
 ---
 
 Chicken Marsala is a classic of candlelit Italian-American restaurants. It's even better at home: the sauce takes ten minutes and tastes like it simmered all day.
