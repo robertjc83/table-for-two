@@ -133,6 +133,22 @@ for (const c of COLLECTIONS) {
   });
   console.log('pin', c.slug);
 }
+// Cookbook pin (uses the cover image made by scripts/make-cookbook.mjs)
+const coverFile = path.join(ROOT, 'public/cookbook/cover.jpg');
+if (fs.existsSync(coverFile)) {
+  const book = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/cookbook/book.json'), 'utf8'));
+  const cover = `<div style="height:100%;display:grid;place-items:center;padding-bottom:10px;background:radial-gradient(circle at 30% 20%,#ffd9d2,#f3c9b8)"><img src="${img64(coverFile)}" style="height:72%;margin-top:40px;width:auto;border-radius:6px 16px 16px 6px;box-shadow:-10px 0 0 #6d0b27,0 40px 70px -20px rgba(0,0,0,.55);transform:rotate(-3deg)"></div>`;
+  await shoot(page(cover, 'The e-cookbook · a gift for couples', `${book.title}: ${book.menus.length} Date Nights for Two`, `${book.recipeCount} recipes · game plans · shopping lists`, '#9f1239'), 'cookbook.jpg');
+  rows.push({
+    title: `${book.title}: ${book.menus.length} Complete Dinners for Two to Cook Together`,
+    description: `${book.menus.length} complete date-night menus for couples: game plans, shopping lists, Chef 1/Chef 2 recipes, drink pairings, playlists and conversation starters. A great gift for couples, newlyweds and anniversaries. Instant PDF download. #datenight #giftsforcouples #cookbook`.slice(0, 500),
+    link: `${SITE}/cookbook/`,
+    image: `${SITE}/pins/cookbook.jpg`,
+    board: 'Date Night Dinners for Two',
+    keywords: 'date night ideas, gifts for couples, cookbook for two, date night at home, anniversary gift ideas',
+  });
+  console.log('pin cookbook');
+}
 await browser.close();
 
 // Remove pins whose recipe no longer has a photo

@@ -13,6 +13,9 @@ Regenerate after adding or changing photos:
 node scripts/make-pins.mjs
 ```
 
+- `profile.md`: profile name, bio and the 5 board descriptions to copy and paste.
+- `schedule.md`: a two-pins-a-day plan (Thanksgiving first), with each pin's page and board.
+
 ## One-time setup
 1. Create a free **Pinterest business account** (pinterest.com/business/create) named "Table for Two".
 2. **Claim your website** (Settings → Claimed accounts → Websites). Choose the HTML tag option and send the tag to Claude to add to the site.

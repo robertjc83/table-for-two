@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Newsletter from '../components/Newsletter.astro';
+import PinButton from '../components/PinButton.astro';
 import { COOKBOOK } from '../data/shop';
 import book from '../../public/cookbook/book.json';
 
@@ -34,7 +35,8 @@ const faqs = [
             ? <a class="btn big" href={buyUrl} target="_blank" rel="noopener">Get the cookbook →</a>
             : <a class="btn big soon" href="#notify">Coming soon: get notified</a>}
         </div>
-        <ul class="ticks"><li>{book.menus.length} date nights · {book.recipeCount} recipes</li><li>Works on any device, and prints well</li><li>Thanksgiving & Christmas menus included</li></ul>
+        <PinButton slug="cookbook" path="/cookbook/" description={`${book.title}: ${book.subtitle}. A gift for couples who love to cook together.`} variant="ghost" />
+        <ul class="ticks" style="margin-top:16px"><li>{book.menus.length} date nights · {book.recipeCount} recipes</li><li>Works on any device, and prints well</li><li>Thanksgiving & Christmas menus included</li></ul>
       </div>
     </div>
   </section>
